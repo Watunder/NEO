@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Effekseer">
+      <UniqueIdentifier>{8a881efd-3667-4345-b154-9fd1b332eed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDLibrary">
+      <UniqueIdentifier>{17b4dc9a-a702-460c-8bf7-904bc2a326ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDEffekseer">
+      <UniqueIdentifier>{10f7baab-c0e6-47fd-9696-dbf0678aca52}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\EffekseerEffect.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\EffekseerEffectImporter.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\EffekseerEmitter.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\EffekseerEmitter2D.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\EffekseerResource.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\EffekseerSystem.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\GDLibrary.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.CommonUtils.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.IndexBufferBase.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.ModelRendererBase.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.Renderer.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.Renderer_Impl.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.RenderStateBase.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.RibbonRendererBase.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.RingRendererBase.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.SpriteRendererBase.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.TrackRendererBase.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.VertexBufferBase.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\_ModelLoader.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\TextureLoader.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.Grid.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.Layer.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.Matrix44.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.ObjectInternal.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.ReferenceObject.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.Vector3DF.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.WorldInternal.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Noise\CurlNoise.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Parameter\Easing.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Client.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Color.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Material\Effekseer.CompiledMaterial.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.CurveLoader.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Utils\Effekseer.CustomAllocator.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.DefaultEffectLoader.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.DefaultFile.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Effect.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNode.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeModel.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeRibbon.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeRing.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeRoot.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeSprite.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeTrack.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\IO\Effekseer.EfkEfcFactory.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.FCurves.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Instance.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.InstanceChunk.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.InstanceContainer.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.InstanceGlobal.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.InstanceGroup.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.InternalScript.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.IntrusiveList.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Manager.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Material\Effekseer.MaterialCompiler.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Material\Effekseer.MaterialFile.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Matrix43.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Matrix44.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Parameter\Effekseer.Parameters.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Random.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.RectF.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Resource.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.ResourceManager.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Server.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Setting.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Socket.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Vector2D.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Vector3D.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.WorkerThread.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\ForceField\ForceFields.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\SIMD\Mat43f.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\SIMD\Mat44f.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Model\Model.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Model\ModelLoader.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Noise\PerlinNoise.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Model\ProceduralModelGenerator.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Model\SplineGenerator.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\SIMD\Utils.cpp">
+      <Filter>Effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.CurveLoader.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.TextureLoader.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\SoundPlayer\GDEffekseer.SoundPlayer.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.SoundLoader.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Shader\GDEffekseer.Shader.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Resource\GDEffekseer.RenderResources.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.ModelRenderer.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.Renderer.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.ModelLoader.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.MaterialLoader.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\GDEffekseer.IndexBuffer.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.RenderState.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Shader\GDEffekseer.ShaderGenerator.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Resource\GDEffekseer.SoundResources.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\GDEffekseer.Utils.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDEffekseer\GDEffekseer.VertexBuffer.cpp">
+      <Filter>GDEffekseer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\EffekseerEffect.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\EffekseerEffectImporter.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\EffekseerEmitter.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\EffekseerEmitter2D.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\EffekseerResource.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\EffekseerSystem.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GDLibrary.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.SpriteRendererBase.h">
+      <Filter>Effekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\TextureLoader.h">
+      <Filter>Effekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.Base.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.Base.Pre.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.CurveLoader.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.IndexBuffer.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.MaterialLoader.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.ModelLoader.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.ModelRenderer.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.Renderer.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.RendererImplemented.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Resource\GDEffekseer.RenderResources.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.RenderState.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Shader\GDEffekseer.Shader.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Shader\GDEffekseer.ShaderGenerator.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.SoundLoader.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\SoundPlayer\GDEffekseer.SoundPlayer.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Resource\GDEffekseer.SoundResources.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.TextureLoader.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.Utils.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.VertexBuffer.h">
+      <Filter>GDEffekseer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>CopperLicht Reference - Tutorial 5</title>
+
+		<style type="text/css">
+			body
+{
+	width: 800px;
+	border: 1px solid #ffffff;
+	
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color:#FFFFFF;	
+	
+	margin: 0;
+	padding: 0;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+pre.tutcode
+{
+	display: block;
+	padding: 8px;
+	border: 1px solid #aaaaaa;
+	background-color: #eeeeee;
+	overflow:scroll; 
+}
+
+#index
+{
+	margin-top: 0px;
+	float: left;
+	width: 200px;
+	position: absolute;
+	left: 0px;
+	background-color: #F3F3F3;
+	padding: 5px;	
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+#content
+{
+	margin-left: 220px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	/*width: 140px;*/
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+a
+{
+	color: #0000ff;
+}
+
+a:link {
+	color: #0000CC;
+	text-decoration: none;
+}
+
+a:visited {
+    color: #0000CC;
+	text-decoration: none;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #0000CC;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+
+hr
+{
+	border: 0px solid #aaaaaa;
+	background-color:#aaaaaa;
+	height:1px;
+}
+
+		</style>
+	</head>
+
+	<body>
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<h2>Documentation</h2>
+			<ul class="classList">
+				<li><a href="../index.html">Overview</a></li>	
+				<li><a href="http://www.ambiera.com/copperlicht/index.html" target="_blank">Website</a></li>
+				<li><a href="../index.html#tutorials">Tutorials</a></li>	
+				<li><a href="../index.html#classes">Class Index</a></li>	
+			</ul>
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+
+<!-- ============================== header ================================= -->	
+<!-- begin static/header.html -->
+<div id="header"  style="clear: both; padding: 10px; margin-left: -21px; width:100%; background-color: #eeeeee; border-bottom: 1px solid #cccccc; border-right: 1px solid #cccccc;">
+CopperLicht API Documentation 
+</div>
+<!-- end static/header.html -->
+<!-- ============================== class title ============================ -->
+
+<!-- begin static/header.html -->
+<br/>
+<a href="../index.html#tutorials">All tutorials</a>
+<div class="tutorialcontent">
+
+	<h1>CopperLicht Tutorial: Custom materials and shaders</h1>
+	<br/>
+	This tutorial demonstrates how to create custom materials using shaders in CopperLicht.<br/>
+	The final result of this tutorial will look about like this:
+	<br/>
+	<br/>
+	<div align="center"><img src="images/tut5_overview.jpg" alt="copperlicht tutorial 5"/><br/>
+	<small>The wood texture is made brighter and drawn by a fragment shader</small>
+	</div>
+	<br/>
+	<ul>
+		<li>Show <a target="_blank" href="demos/tutorial5/index.html">live demo of this tutorial</a></li>
+		<li>Download this tutorial  <a href="demos/tutorial5.zip">as zip archive.</a></li>
+	</ul>
+		
+	<br/>
+
+	<h2>Writing CopperLicht code</h2>
+	
+	For this tutorial we don't need the 3d editor CopperCube, everything we are doing here is writing code. To keep this simple and short,
+	the following is the full code of this example. I'll explain it in detail below. 
+	
+	<pre class="tutcode" style="max-height: 600px; overflow:scroll; ">
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta http-equiv="Content-Type" content="text/html; charset=windows-1252"&gt;	
+		&lt;script type="text/javascript" src="copperlicht.js"&gt;&lt;/script&gt;	
+	&lt;/head&gt;
+
+	&lt;body&gt;	
+		&lt;b&gt;Tutorial 05: Custom materials and shaders.&lt;/b&gt;&lt;br/&gt;
+	Demonstrates how to create custom materials and shaders.&lt;br/&gt;&lt;br/&gt;
+	&lt;div style="width:640px; margin:auto; position:relative; font-size: 9pt; color: #777777;"&gt;
+		&lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+		&lt;/canvas&gt;
+		&lt;div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:420px; background-color:#000000; height:37px; width:300px; border-radius:5px; border:1px solid #777777; opacity:0.5;" id="helptext"&gt; 
+			Look with the mouse, move with the cursor keys or WASD. 
+		&lt;/div&gt; 
+	&lt;/div&gt;
+	&lt;script type="text/javascript"&gt;
+	&lt;!--
+	main = function()
+	{
+		// create the 3d engine
+		var engine = new CL3D.CopperLicht('3darea');
+		
+		if (!engine.initRenderer())
+			return; // this browser doesn't support WebGL
+			
+		// add a new 3d scene
+		
+		var scene = new CL3D.Scene();
+		engine.addScene(scene);
+		
+		scene.setBackgroundColor(CL3D.createColor(1, 0, 0, 0));
+		scene.setRedrawMode(CL3D.Scene.REDRAW_WHEN_SCENE_CHANGED);
+		
+		// add a sky box
+		var skybox = new CL3D.SkyBoxSceneNode();
+		scene.getRootSceneNode().addChild(skybox);
+		
+		// set texture sides of the skybox
+		for (var i=0; i&lt;6; ++i)
+			skybox.getMaterial(i).Tex1 = engine.getTextureManager().getTexture("stars.jpg", true);
+			
+		// add a cube to test out
+		var cubenode = new CL3D.CubeSceneNode();
+		scene.getRootSceneNode().addChild(cubenode);
+		cubenode.getMaterial(0).Tex1 = engine.getTextureManager().getTexture("crate_wood.jpg", true);
+									
+		// add a user controlled camera with a first person shooter style camera controller
+		var cam = new CL3D.CameraSceneNode();
+		cam.Pos.X = 20;
+		cam.Pos.Y = 15;
+		
+		var animator = new CL3D.AnimatorCameraFPS(cam, engine);										
+		cam.addAnimator(animator);										
+		animator.lookAt(new CL3D.Vect3d(0,0,0));			
+		
+		scene.getRootSceneNode().addChild(cam);
+		scene.setActiveCamera(cam);				
+		
+		// now, we want to use a custom material for our cube, lets write
+		// a vertex and a fragment shader:
+		
+		  var vertex_shader_source = "\
+		   #ifdef GL_ES                    \n\
+		   precision highp float;          \n\
+		   #endif                          \n\
+		   uniform mat4 worldviewproj;     \
+		   attribute vec4 vPosition;       \
+		   attribute vec4 vNormal;         \
+		   attribute vec2 vTexCoord1;      \
+		   attribute vec2 vTexCoord2;      \
+		   varying vec2 v_texCoord1;       \
+		   varying vec2 v_texCoord2;       \
+		   void main()                     \
+		   {                               \
+			gl_Position = worldviewproj * vPosition;\
+			v_texCoord1 = vTexCoord1.st;   \
+			v_texCoord2 = vTexCoord2.st;   \
+		   }";
+		   
+		  var fragment_shader_source = "\
+		   #ifdef GL_ES                    \n\
+		   precision highp float;          \n\
+		   #endif                          \n\
+		   uniform sampler2D texture1;     \
+		   uniform sampler2D texture2;     \
+			                               \
+		   varying vec2 v_texCoord1;       \
+		   varying vec2 v_texCoord2;       \
+						                   \
+		   void main()                     \
+		   {                               \
+			vec2 texCoord = vec2(v_texCoord1.s, v_texCoord1.t);  \
+			gl_FragColor = texture2D(texture1, texCoord) * 2.0;  \
+		   }";
+		
+		// create a solid material using the shaders. For transparent materials, take a look
+		// at the other parameters of createMaterialType
+		
+		var newMaterialType = engine.getRenderer().createMaterialType(vertex_shader_source, fragment_shader_source);
+		if (newMaterialType != -1)
+			cubenode.getMaterial(0).Type = newMaterialType;
+		else
+			alert('could not create shader'); //copperLicht will write the exact error line in the html
+	}
+	
+	main();
+	--&gt;
+	&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+	
+	Create a .html file and paste this code into there, place the copperlicht.js file from the CopperLicht SDK in the same directory, and 
+	add two .jpg files named crate_wood.jpg and stars.jpg which are used in this example as textures.
+	<br/>
+	<br/>
+	
+	<h2>What the code does</h2>
+	The first few lines of the html code are creating a canvas element inside a container. Inside this container, there is a &lt;div&gt;>, used for the 2d overlay. The style of these divs
+	with its absolute positioning is making it possible to move them over the canvas:
+	
+	<pre class="tutcode" >&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta http-equiv="Content-Type" content="text/html; charset=windows-1252"&gt;
+      &lt;script type="text/javascript" src="copperlicht.js"&gt;&lt;/script&gt;   
+   &lt;/head&gt;
+
+   &lt;body&gt;   
+      &lt;b&gt;Tutorial 05: Custom materials and shaders.&lt;/b&gt;&lt;br/&gt;
+   Demonstrates how to create custom materials and shaders.&lt;br/&gt;&lt;br/&gt;
+   &lt;div style="width:640px; margin:auto; position:relative; font-size: 9pt; color: #777777;"&gt;
+      &lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+      &lt;/canvas&gt;
+      &lt;div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:420px; background-color:#000000; height:37px; width:300px; border-radius:5px; border:1px solid #777777; opacity:0.5;" id="helptext"&gt; 
+         Look with the mouse, move with the cursor keys or WASD. 
+      &lt;/div&gt; 
+   &lt;/div&gt;</pre>
+
+	So let's start with the javascript code. First, we simply initialize the 3d engine and create a scene, and set it's background color and redraw mode:
+	
+	<pre class="tutcode" >  &lt;script type="text/javascript"&gt;
+   &lt;!--
+   main = function()
+   {
+       <font color="#008000">// create the 3d engine</font>
+      var engine = new CL3D.CopperLicht('3darea');
+      
+      if (!engine.initRenderer())
+         return;  <font color="#008000">// this browser doesn't support WebGL</font>
+         
+       <font color="#008000">// add a new 3d scene</font>
+      
+      var scene = new CL3D.Scene();
+      engine.addScene(scene);
+      
+      scene.setBackgroundColor(CL3D.createColor(1, 0, 0, 0));
+      scene.setRedrawMode(CL3D.Scene.REDRAW_WHEN_SCENE_CHANGED);
+	</pre>
+	
+	Of course, we need a camera from which the 3d scene is rendered. We place it at 20, 15 and add an animator to it
+	so that we can move the camera using the cursor keys and the mouse. In addition, we also add a simple sky box and 
+	a cube scene node in the middle of the scene. The material of that cube will then later have the material we create.
+	
+	<pre class="tutcode" >
+     <font color="#008000">// add a sky box</font>
+      var skybox = new CL3D.SkyBoxSceneNode();
+      scene.getRootSceneNode().addChild(skybox);
+      
+     <font color="#008000"> // set texture sides of the skybox</font>
+      for (var i=0; i&lt;6; ++i)
+         skybox.getMaterial(i).Tex1 = engine.getTextureManager().getTexture("stars.jpg", true);
+         
+      <font color="#008000">// add a cube to test out</font>
+      var cubenode = new CL3D.CubeSceneNode();
+      scene.getRootSceneNode().addChild(cubenode);
+      cubenode.getMaterial(0).Tex1 = engine.getTextureManager().getTexture("crate_wood.jpg", true);
+                           
+     <font color="#008000"> // add a user controlled camera with a first person shooter style camera controller</font>
+      var cam = new CL3D.CameraSceneNode();
+      cam.Pos.X = 20;
+      cam.Pos.Y = 15;
+      
+      var animator = new CL3D.AnimatorCameraFPS(cam, engine);                              
+      cam.addAnimator(animator);                              
+      animator.lookAt(new Vect3d(0,0,0));         
+      
+      scene.getRootSceneNode().addChild(cam);
+      scene.setActiveCamera(cam);           
+	</pre>
+	
+	And now for the more interesting part: Create our own material. In WebGL, you create materials using so called shaders. They
+	are ususally consisting of a vertex and a fragment shader. The vertex shader is a little program which calculates the final
+	position of each 3d vertex on the screen, and the fragment shader is a program which calculates the color of the final pixel.
+	You can write these programs in a language called GLSL. The following two strings in javascript represent our vertex and
+	fragment programs:
+	
+	<pre class="tutcode" ><font color="#008000">// now, we want to use a custom material for our cube, lets write
+      // a vertex and a fragment shader:</font>
+      
+       var vertex_shader_source = "\
+		   #ifdef GL_ES                    \n\
+		   precision highp float;          \n\
+		   #endif                          \n\
+		   uniform mat4 worldviewproj;     \
+		   attribute vec4 vPosition;       \
+		   attribute vec4 vNormal;         \
+		   attribute vec2 vTexCoord1;      \
+		   attribute vec2 vTexCoord2;      \
+		   varying vec2 v_texCoord1;       \
+		   varying vec2 v_texCoord2;       \
+		   void main()                     \
+		   {                               \
+			gl_Position = worldviewproj * vPosition;\
+			v_texCoord1 = vTexCoord1.st;   \
+			v_texCoord2 = vTexCoord2.st;   \
+		   }";
+		   
+		  var fragment_shader_source = "\
+		   #ifdef GL_ES                    \n\
+		   precision highp float;          \n\
+		   #endif                          \n\
+		   uniform sampler2D texture1;     \
+		   uniform sampler2D texture2;     \
+			                               \
+		   varying vec2 v_texCoord1;       \
+		   varying vec2 v_texCoord2;       \
+						                   \
+		   void main()                     \
+		   {                               \
+			vec2 texCoord = vec2(v_texCoord1.s, v_texCoord1.t);  \
+			gl_FragColor = texture2D(texture1, texCoord) * 2.0;  \
+		   }";
+	</pre>
+	
+	The programs have been written in GLSL, directly inside the javascript code, but you can do this how ever you like, like loading it from
+	an element in the html code or similar.<br/>
+	Note that the vertex_shader program is using some constants like worldviewproj, which is the World-View-Projection matrix. This is
+	a variable provided by CopperLicht. If you want to set own variables, you can do this using the normal WebGL functions, and the 
+	Renderer.getGLProgramFromMaterialType() function. The program multiplies the current vertx position (vPosition) with this
+	World-View-Projection matrix to store the final vertex position into gl_Position. This is what basically all vertex programs
+	should do. Also, it saves the texture coordinates (vTexCoord1.st and vTexCoord2.st) so it can be used in the fragment shader below.<br/>
+	The fragment shader, the program which writes the pixels is accessing the texture coordinate using texture2D and writing it out
+	to the screen, gl_FragColor. Before this, it is multiplying the color by two, making it brighter. Feel free to change the * 2
+	statement to something different to try it out.<br/>
+	<br/>
+	If you don't understand all this, don't worry. Writing GLSL shaders is quite complicated and there are books and tutorials out there
+	covering this, but it is out of the scope of this tutorial explaining in detail how they work.
+	<br/>
+	<br/>
+	Now, we only need to tell CopperLicht to use these shader programs. We create a new Material type using these two shader programs
+	in the last few lines of code:
+	
+	<pre class="tutcode" >      <font color="#008000">// create a solid material using the shaders. For transparent materials, take a look
+      // at the other parameters of createMaterialType</font>
+      
+      var newMaterialType = engine.getRenderer().createMaterialType(vertex_shader_source, fragment_shader_source);
+      if (newMaterialType != -1)
+         cubenode.getMaterial(0).Type = newMaterialType;
+      else
+         alert('could not create shader');  <font color="#008000">//copperLicht will write the exact error line in the html</font>
+	</pre>
+	
+	
+	That's it basically. We put all this code into a function named 'main', so we only need to call it.
+	
+	<pre class="tutcode" >
+		}
+    main();
+	</pre>
+	
+	And that's it, now you know how to create own materials in CopperLicht.<br/>
+	<br/>
+	This is not all of course. You can specify blend modes for transparent materials for example using the further parameters of
+	createMaterialType, and you could set shader constants during runtime, but basically this is it.
+	<br/>
+	If you are interested in modifying shader variables at runtime, take a look at the 
+	<a href="../symbols/CL3D.Renderer.html#OnChangeMaterial">CL3D.Renderer.OnChangeMaterial</a> callback.
+	<br/>
+	
+	
+</div>
+<!-- end static/header.html -->
+
+<br/>
+<br/>
+<a href="../index.html#tutorials">More Tutorials</a>
+<br/>
+<br/>
+<hr/>
+
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy; 2011-2018 N.Gebhardt, Ambiera<br />
+			Documentation generated by JsDoc Toolkit
+		</div>
+	</body>
+</html>

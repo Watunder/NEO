@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>CopperLicht Reference - Tutorial 4</title>
+
+		<style type="text/css">
+			body
+{
+	width: 800px;
+	border: 1px solid #ffffff;
+	
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color:#FFFFFF;	
+	
+	margin: 0;
+	padding: 0;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+pre.tutcode
+{
+	display: block;
+	padding: 8px;
+	border: 1px solid #aaaaaa;
+	background-color: #eeeeee;
+	overflow:scroll; 
+}
+
+#index
+{
+	margin-top: 0px;
+	float: left;
+	width: 200px;
+	position: absolute;
+	left: 0px;
+	background-color: #F3F3F3;
+	padding: 5px;	
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+#content
+{
+	margin-left: 220px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	/*width: 140px;*/
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+a
+{
+	color: #0000ff;
+}
+
+a:link {
+	color: #0000CC;
+	text-decoration: none;
+}
+
+a:visited {
+    color: #0000CC;
+	text-decoration: none;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #0000CC;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+
+hr
+{
+	border: 0px solid #aaaaaa;
+	background-color:#aaaaaa;
+	height:1px;
+}
+
+		</style>
+	</head>
+
+	<body>
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<h2>Documentation</h2>
+			<ul class="classList">
+				<li><a href="../index.html">Overview</a></li>	
+				<li><a href="http://www.ambiera.com/copperlicht/index.html" target="_blank">Website</a></li>
+				<li><a href="../index.html#tutorials">Tutorials</a></li>	
+				<li><a href="../index.html#classes">Class Index</a></li>	
+			</ul>
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+
+<!-- ============================== header ================================= -->	
+<!-- begin static/header.html -->
+<div id="header"  style="clear: both; padding: 10px; margin-left: -21px; width:100%; background-color: #eeeeee; border-bottom: 1px solid #cccccc; border-right: 1px solid #cccccc;">
+CopperLicht API Documentation 
+</div>
+<!-- end static/header.html -->
+<!-- ============================== class title ============================ -->
+
+<!-- begin static/header.html -->
+<br/>
+<a href="../index.html#tutorials">All tutorials</a>
+<div class="tutorialcontent">
+
+	<h1>CopperLicht Tutorial: 2D Overlays</h1>
+	<br/>
+	This tutorial demonstrates 2d text overlays, how to caculate the 2d position from a 3d position and how to use the OnAnimate handler.<br/>
+	The final result of this tutorial will look about like this:
+	<br/>
+	<br/>
+	<div align="center"><img src="images/tut4_overview.jpg" alt="copperlicht tutorial 1"/><br/>
+	<small>The 2d overlays in action over a couple of billboards</small>
+	</div>
+	<br/>
+	<ul>
+		<li>Show <a target="_blank" href="demos/tutorial4/index.html">live demo of this tutorial</a></li>
+		<li>Download this tutorial  <a href="demos/tutorial4.zip">as zip archive.</a></li>
+	</ul>
+		
+	<br/>
+
+	<h2>Writing CopperLicht code</h2>
+	
+	For this tutorial we don't need the 3d editor CopperCube, everything we are doing here is writing code. To keep this simple and short,
+	the following is the full code of this example. I'll explain it in detail below. 
+	
+	<pre class="tutcode" style="max-height: 600px; overflow:scroll; ">
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"&gt;
+	&lt;script type="text/javascript" src="copperlicht.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;b&gt;Tutorial 04: 2D Overlays.&lt;/b&gt;&lt;br/&gt;
+	Demonstrates 2d text overlays, how to caculate the 2d position from a 3d position and how to use the OnAnimate handler.
+	&lt;div style="width:640px; margin:auto; position:relative; font-size: 9pt; color: #777777;"&gt;
+		&lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+		&lt;/canvas&gt;
+		&lt;div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:420px; background-color:#000000; height:37px; width:300px; border-radius:5px; border:1px solid #777777; opacity:0.5;" id="helptext"&gt; 
+			Look with the mouse, move with the cursor keys or WASD. 
+		&lt;/div&gt; 
+		&lt;div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:20px; background-color:#000000; height:20px; width:60px; border-radius:5px; border:1px solid #777777; opacity:0.5;" id="originlabel"&gt; 
+			The Origin
+		&lt;/div&gt; 
+	&lt;/div&gt;
+	&lt;script type="text/javascript"&gt;
+	&lt;!--
+	main = function()
+	{
+		// create the 3d engine
+		var engine = new CL3D.CopperLicht('3darea');
+		
+		if (!engine.initRenderer())
+			return; // this browser doesn't support WebGL
+			
+		// add a new 3d scene
+		
+		var scene = new CL3D.Scene();
+		engine.addScene(scene);
+		
+		scene.setBackgroundColor(CL3D.createColor(1, 0, 0, 0));
+		scene.setRedrawMode(CL3D.Scene.REDRAW_WHEN_SCENE_CHANGED);
+		
+		// add a transparent billboard scene node with a text sign
+		for (var i=0; i&lt;50; ++i)
+		{
+			var billboard = new CL3D.BillboardSceneNode();
+			billboard.setSize(30, 30);
+			billboard.Pos.X = Math.random() * 80 - 40;
+			billboard.Pos.Y = Math.random() * 80 - 40;
+			billboard.Pos.Z = Math.random() * 80 - 40;
+			billboard.getMaterial(0).Tex1 = engine.getTextureManager().getTexture("particle.png", true);
+			billboard.getMaterial(0).Type = CL3D.Material.EMT_TRANSPARENT_ADD_COLOR;
+			scene.getRootSceneNode().addChild(billboard);
+		}
+							
+		// add a user controlled camera with a first person shooter style camera controller
+		var cam = new CL3D.CameraSceneNode();
+		cam.Pos.X = 50;
+		cam.Pos.Y = 20;
+		
+		var animator = new CL3D.AnimatorCameraFPS(cam, engine);										
+		cam.addAnimator(animator);										
+		animator.lookAt(new CL3D.Vect3d(0,20,0));			
+		
+		scene.getRootSceneNode().addChild(cam);
+		scene.setActiveCamera(cam);				
+
+		// draw handler
+		var pos3d = new CL3D.Vect3d(0,0,0);
+		
+		engine.OnAnimate = function()
+		{
+			var element = document.getElementById('originlabel');
+			if (element)
+			{
+				// set the position of the label to the 2d position of the 3d point
+				
+				var pos2d = engine.get2DPositionFrom3DPosition(pos3d);
+				var hide = false;
+				
+				if (pos2d)
+				{
+					element.style.left = pos2d.X;
+					element.style.top = pos2d.Y;
+					
+					// hide if outside of the border
+					hide = pos2d.X &lt; 0 || pos2d.Y &lt; 0 || 
+						pos2d.X &gt; engine.getRenderer().getWidth()-60 || 
+						pos2d.Y &gt; engine.getRenderer().getHeight()-20;
+				}
+				else
+					hide = true; 
+					
+				element.style.display = hide ? 'none' : 'block';
+			}
+		}
+	}
+	
+	main();
+	--&gt;
+	&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+	</pre>
+	
+	Create a .html file and paste this code into there, place the copperlicht.js file from the CopperLicht SDK in the same directory, and 
+	add a.png file named particle.png which is used in this example as textures.
+	<br/>
+	<br/>
+	
+	<h2>What the code does</h2>
+	The first few lines of the html code are creating a canvas element inside a container. Inside this container, there are two &lt;div&gt;>'s, used for the 2d overlays. The style of these divs
+	with its absolute positioning is making it possible to move them over the canvas. Notice that we set the ids of the &lt;div&gt;>'s to something meaningful, so that we have access to them later:
+	
+	<pre class="tutcode" >&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"&gt;
+  &lt;script type="text/javascript" src="copperlicht.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;b&gt;Tutorial 04: 2D Overlays.&lt;/b&gt;&lt;br/&gt;
+  Demonstrates 2d text overlays, how to caculate the 2d position from a 3d position and how to use the OnAnimate handler.
+  &lt;div style="width:640px; margin:auto; position:relative; font-size: 9pt; color: #777777;"&gt;
+    &lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+    &lt;/canvas&gt;
+    &lt;div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:420px; background-color:#000000; height:37px; width:300px; border-radius:5px; border:1px solid #777777; opacity:0.5;" id="helptext"&gt; 
+      Look with the mouse, move with the cursor keys or WASD. 
+    &lt;/div&gt; 
+    &lt;div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:20px; background-color:#000000; height:20px; width:60px; border-radius:5px; border:1px solid #777777; opacity:0.5;" id="originlabel"&gt; 
+      The Origin
+    &lt;/div&gt; 
+  &lt;/div&gt;</pre>
+
+	So let's start with the javascript code. First, we simply initialize the 3d engine and create a scene, and set it's background color and redraw mode:
+	
+	<pre class="tutcode" > &lt;script type="text/javascript"&gt;
+  &lt;!--
+  main = function()
+  {
+    <font color="#008000">// create the 3d engine</font>
+    var engine = new CL3D.CopperLicht('3darea');
+    
+    if (!engine.initRenderer())
+      return; <font color="#008000">// this browser doesn't support WebGL</font>
+      
+   <font color="#008000">// add a new 3d scene</font>
+    
+    var scene = new CL3D.Scene();
+    engine.addScene(scene);
+    
+    scene.setBackgroundColor(CL3D.createColor(1, 0, 0, 0));
+    scene.setRedrawMode(CL3D.Scene.REDRAW_WHEN_SCENE_CHANGED);</pre>
+	
+	In oder to make the scene a little bit more interesting, we add 50 billboards at random positions:
+	
+	<pre class="tutcode" >
+    <font color="#008000">// add a transparent billboard scene node with a text sign</font>
+    for (var i=0; i&lt;50; ++i)
+    {
+      var billboard = new CL3D.BillboardSceneNode();
+      billboard.setSize(30, 30);
+      billboard.Pos.X = Math.random() * 80 - 40;
+      billboard.Pos.Y = Math.random() * 80 - 40;
+      billboard.Pos.Z = Math.random() * 80 - 40;
+      billboard.getMaterial(0).Tex1 = engine.getTextureManager().getTexture("particle.png", true);
+      billboard.getMaterial(0).Type = CL3D.Material.EMT_TRANSPARENT_ADD_COLOR;
+      scene.getRootSceneNode().addChild(billboard);
+    }
+	</pre>
+	
+	And of course, we need a camera from which the 3d scene is rendered. We place it at 50, 20 and add an animator to it
+	so that we can move the camera using the cursor keys and the mouse:
+	
+	<pre class="tutcode" >
+    <font color="#008000">
+    // add a user controlled camera with a first person shooter style camera controller</font>
+    var cam = new CL3D.CameraSceneNode();
+    cam.Pos.X = 50;
+    cam.Pos.Y = 20;
+    
+    var animator = new CL3D.AnimatorCameraFPS(cam, engine);                    
+    cam.addAnimator(animator);                    
+    animator.lookAt(new CL3D.Vect3d(0,20,0));      
+    
+    scene.getRootSceneNode().addChild(cam);
+    scene.setActiveCamera(cam);        
+	</pre>
+	
+	And now for the more interesting part: We would like one of the 2D overlays we created above to move. For simplicity, we want the overlay
+	to be over a 3d position. We use the origin, (0,0,0) in this example, but of course any other position is possible as well. To
+	find the 2D position from a 3d position, we can use CopperLichts <i>get2DPositionFrom3DPosition</i> function. Notice that this function
+	does not always return a 2D point, but sometimes null, for example when the point is behind the camera. In this case, we need to
+	hide the 2D overlay, of course. And this is what we are doing with this code, which is called everytime the 3d engine in animating
+	the scene. We do this by registering our function with the Copperlicht OnAnimate even handler:
+	
+	<pre class="tutcode" >
+    <font color="#008000">  // move 2d overlay to this 3d position every frame</font>
+    var pos3d = new CL3D.Vect3d(0,0,0);
+    
+    engine.OnAnimate = function()
+    {
+      var element = document.getElementById('originlabel');
+      if (element)
+      {
+        <font color="#008000">// set the position of the label to the 2d position of the 3d point</font>
+        
+        var pos2d = engine.get2DPositionFrom3DPosition(pos3d);
+        var hide = false;
+        
+        if (pos2d)
+        {
+          element.style.left = pos2d.X;
+          element.style.top = pos2d.Y;
+          
+          <font color="#008000">// hide if outside of the border</font>
+          hide = pos2d.X &lt; 0 || pos2d.Y &lt; 0 || 
+            pos2d.X &gt; engine.getRenderer().getWidth()-60 || 
+            pos2d.Y &gt; engine.getRenderer().getHeight()-20;
+        }
+        else
+          hide = true; 
+          
+        element.style.display = hide ? 'none' : 'block';
+      }
+    }
+  }
+	</pre>
+	
+	That's it basically. We put all this code into a function named 'main', so we only need to call it.
+	
+	<pre class="tutcode" >
+    main();
+	</pre>
+	
+	And that's it, now you know how to use 2D overlays in CopperLicht.
+	
+</div>
+<!-- end static/header.html -->
+
+<br/>
+<br/>
+<a href="../index.html#tutorials">More Tutorials</a>
+<br/>
+<br/>
+<hr/>
+
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy; 2011-2018 N.Gebhardt, Ambiera<br />
+			Documentation generated by JsDoc Toolkit
+		</div>
+	</body>
+</html>

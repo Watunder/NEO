@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>CopperLicht Reference - Tutorial 8</title>
+
+		<style type="text/css">
+			body
+{
+	width: 800px;
+	border: 1px solid #ffffff;
+	
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color:#FFFFFF;	
+	
+	margin: 0;
+	padding: 0;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+pre.tutcode
+{
+	display: block;
+	padding: 8px;
+	border: 1px solid #aaaaaa;
+	background-color: #eeeeee;
+	overflow:scroll; 
+}
+
+#index
+{
+	margin-top: 0px;
+	float: left;
+	width: 200px;
+	position: absolute;
+	left: 0px;
+	background-color: #F3F3F3;
+	padding: 5px;	
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+#content
+{
+	margin-left: 220px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	/*width: 140px;*/
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+a
+{
+	color: #0000ff;
+}
+
+a:link {
+	color: #0000CC;
+	text-decoration: none;
+}
+
+a:visited {
+    color: #0000CC;
+	text-decoration: none;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #0000CC;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+
+hr
+{
+	border: 0px solid #aaaaaa;
+	background-color:#aaaaaa;
+	height:1px;
+}
+
+		</style>
+	</head>
+
+	<body>
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<h2>Documentation</h2>
+			<ul class="classList">
+				<li><a href="../index.html">Overview</a></li>	
+				<li><a href="http://www.ambiera.com/copperlicht/index.html" target="_blank">Website</a></li>
+				<li><a href="../index.html#tutorials">Tutorials</a></li>	
+				<li><a href="../index.html#classes">Class Index</a></li>	
+			</ul>
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+
+<!-- ============================== header ================================= -->	
+<!-- begin static/header.html -->
+<div id="header"  style="clear: both; padding: 10px; margin-left: -21px; width:100%; background-color: #eeeeee; border-bottom: 1px solid #cccccc; border-right: 1px solid #cccccc;">
+CopperLicht API Documentation 
+</div>
+<!-- end static/header.html -->
+<!-- ============================== class title ============================ -->
+
+<!-- begin static/header.html -->
+<br/>
+<a href="../index.html#tutorials">All tutorials</a>
+<div class="tutorialcontent">
+
+	<h1>CopperLicht Tutorial: Shadows</h1>
+	<br/>
+	This tutorial demonstrates how to add realtime 3D shadows in CopperLicht.<br/>
+	The final result of this tutorial will look about like this:
+	<br/>
+	<br/>
+	<div align="center"><img src="images/tut8_overview.jpg" alt="copperlicht tutorial 8"/><br/>
+	<small>Realtime 3D shadows in action.</small>
+	</div>
+	<br/>
+	<ul>
+		<li>Show <a target="_blank" href="demos/tutorial8/index.html">live demo of this tutorial</a></li>
+		<li>Download this tutorial  <a href="demos/tutorial8.zip">as zip archive.</a></li>
+	</ul>
+		
+	<br/>
+	
+	<h2>Creating the scene</h2>
+	
+	To create a scene quickly for our shadows, we use the <a href="http://www.ambiera.com/coppercube/index.html">CopperCube</a> editor. Click on the 'create Terrain' button (or use the menu Edit -> Insert -> Create Terrain). You need to be sure to include a directional light in your scene. Otherwise you won't get any shadows. The scene might then look like this:<br/><br/>
+	
+	<div align="center"><img src="images/tut8_img1.jpg" alt="a room"/><br/>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	Use CopperCube to save the scene into a directory of your choice and publish the scene as WebGL/JavaScript (Choose Tools -> Test as JavaScript/WebGL). This will create a .ccbjs or .ccbz
+	file with this scene which we can load using CopperLicht.
+	
+	
+
+	<h2>Writing CopperLicht code</h2>
+	
+	Now create a .html file in that directory and paste the following code into it. What it does will be explained in detail below.
+	
+	<pre class="tutcode" style="max-height: 600px; overflow:scroll; ">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=windows-1252"&gt;
+    &lt;title&gt;WebGL Shadowmap test&lt;/title&gt;    
+    &lt;script type="text/javascript" src="copperlicht.js"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;  
+  
+      &lt;div align="center"&gt;    
+        &lt;br/&gt;&lt;br/&gt;
+        &lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+        &lt;/canvas&gt;
+      &lt;/div&gt;
+      
+      &lt;script type="text/javascript"&gt;
+        &lt;!--    
+          // create the 3d engine
+        
+        var engine = new CL3D.CopperLicht('3darea');
+        var scene = null;
+         var setupShadowScene = null;
+		 
+        if (engine.initRenderer())
+        {                   
+          setupShadowScene = function()
+          {
+           scene = engine.getScene();
+          
+            
+            // now setup everything needed for shadow mapping
+            
+            scene.ShadowMappingEnabled = true;
+            scene.ShadowMapOpacity = 0.5;
+            scene.ShadowMapResolution = 1024;
+            scene.ShadowMapBias = 0.0001;
+            scene.ShadowMapCameraViewDetailFactor = 0.1;
+
+          }
+        }      
+          
+        engine.load('copperlichtdata/test.ccbz', false, setupShadowScene);        
+        
+        --&gt;
+      &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+
+	<br/>
+	<br/>
+	
+	<h2>What the code does</h2>
+	As always, the first few lines of the html code are creating a canvas element inside a container. <br/>
+	<br/>
+	So let's start with the javascript code. Basically, we simply initialize the 3d engine and tell it to load the scene file we created in the editor, in the last line. You might have to adjust
+	the file name of the .ccbjs file to fit the name you picked when saving the scene. 
+	
+	<pre class="tutcode" >
+   engine.load('copperlichtdata/test.ccbz', false, setupShadowScene);        
+  </pre>
+	
+	In the middle of the code, we have a function, which gets called once everything is loaded.<br/>
+	We Only use it to set up the shadow drawing parameters:
+	
+	<pre class="tutcode" >
+scene.ShadowMappingEnabled = true;
+scene.ShadowMapOpacity = 0.5;
+scene.ShadowMapBias = 0.0001;
+scene.ShadowMapCameraViewDetailFactor = 0.1;
+ </pre>
+  
+   Basically, we enable shadow drawing by setting 'ShadowMappingEnabled' to true. All the following parameters are just optional. You can
+tweak them a bit in order to make them work nicely with your own scene:  'ShadowMapOpacity' controls the transparency with which the shadows are 
+being drawn. ShadowMapBias is important and depending on your scene. Tweak it so that the shadows in your scene look the way you want them to, values like 0.001, 0.0001 or even 0.00001 are usual.<br/>
+<br/>
+'ShadowMapCameraViewDetailFactor' gives a way to adjust the detail: Between how long are shadows visible in 
+ the distance and how detailed the shadow map is in close vicinity. Make the value bigger (like 1.0) for longer viewable shadows but with smaller details, and smaller (like 0.2) for detailed shadow which don't have a big view distance.
+ 
+ <br/><br/>
+	And basically, that's it. Now you know how to use shadows in CopperLicht.<br/>
+
+	
+</div>
+<!-- end static/header.html -->
+
+<br/>
+<br/>
+<a href="../index.html#tutorials">More Tutorials</a>
+<br/>
+<br/>
+<hr/>
+
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy; 2011-2018 N.Gebhardt, Ambiera<br />
+			Documentation generated by JsDoc Toolkit
+		</div>
+	</body>
+</html>

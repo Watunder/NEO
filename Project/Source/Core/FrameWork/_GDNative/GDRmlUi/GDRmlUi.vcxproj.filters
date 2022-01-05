@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GDLibrary">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GDRmlUi">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="RmlUi">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="GDBinder">
+      <UniqueIdentifier>{8f60ad47-92ac-4778-86f5-dc1a30e1553e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDRmlUi\Font">
+      <UniqueIdentifier>{e1d7d7aa-17e9-4767-8d6c-a7e940e27c00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDRmlUi\System">
+      <UniqueIdentifier>{171ed814-bf6f-41e1-bc6d-baa66a5bdf1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDRmlUi\Render">
+      <UniqueIdentifier>{760986a3-0b3c-47a0-ab85-cc69618fe5aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDRmlUi\File">
+      <UniqueIdentifier>{66de4aff-0727-470b-b848-ba6c9d67cbf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RmlUi\Core">
+      <UniqueIdentifier>{fb20d7c6-fa1e-48e0-9adb-4b3db7c672b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RmlUi\Debugger">
+      <UniqueIdentifier>{7ac7ef27-dd1e-41d3-ae5d-a4b27534631c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDBinder\Render">
+      <UniqueIdentifier>{b7583382-7bda-4904-8cb9-7bef98885a7e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\GDLibrary.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RmlUiMain.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDRmlUi\Font\FontEngineBitmap.h">
+      <Filter>GDRmlUi\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDRmlUi\Font\FontEngineInterfaceBitmap.h">
+      <Filter>GDRmlUi\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RmlUiContext.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDRmlUi\System\GDRmlUi.SystemInterface.h">
+      <Filter>GDRmlUi\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDRmlUi\File\GDRmlUi.FileInterface.h">
+      <Filter>GDRmlUi\File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_Binder\Render\GDBinder.Implemented.h">
+      <Filter>GDBinder\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_Binder\Render\GDBinder.Render.h">
+      <Filter>GDBinder\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Graphics\GDRmlUi\Render\GDRmlUi.RenderInterface.h">
+      <Filter>GDRmlUi\Render</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GDLibrary.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RmlUiMain.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDRmlUi\Font\FontEngineBitmap.cpp">
+      <Filter>GDRmlUi\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDRmlUi\Font\FontEngineInterfaceBitmap.cpp">
+      <Filter>GDRmlUi\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RmlUiContext.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDRmlUi\System\GDRmlUi.SystemInterface.cpp">
+      <Filter>GDRmlUi\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDRmlUi\File\GDRmlUi.FileInterface.cpp">
+      <Filter>GDRmlUi\File</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_Binder\Render\GDBinder.Implemented.cpp">
+      <Filter>GDBinder\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_Binder\Render\GDBinder.Render.cpp">
+      <Filter>GDBinder\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Graphics\GDRmlUi\Render\GDRmlUi.RenderInterface.cpp">
+      <Filter>GDRmlUi\Render</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

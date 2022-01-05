@@ -1,0 +1,30 @@
+#include "GDLibrary.h"
+#include <ClassDB.hpp>
+#include "EffekseerSystem.h"
+#include "EffekseerEffect.h"
+#include "EffekseerResource.h"
+#include "EffekseerEmitter.h"
+#include "EffekseerEmitter2D.h"
+
+using namespace godot;
+
+extern "C" void GDN_EXPORT godot_gdnative_init(godot_gdnative_init_options *option)
+{
+	Godot::gdnative_init(option);
+}
+
+extern "C" void GDN_EXPORT godot_gdnative_terminate(godot_gdnative_terminate_options *option)
+{
+	Godot::gdnative_terminate(option);
+}
+
+extern "C" void GDN_EXPORT godot_nativescript_init(void *handle)
+{
+	Godot::nativescript_init(handle);
+
+	register_class<EffekseerSystem>();
+	register_class<EffekseerEffect>();
+	register_class<EffekseerResource>();
+	register_class<EffekseerEmitter>();
+	register_class<EffekseerEmitter2D>();
+}

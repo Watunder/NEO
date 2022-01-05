@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>CopperLicht Reference - Tutorial 1</title>
+
+		<style type="text/css">
+			body
+{
+	width: 800px;
+	border: 1px solid #ffffff;
+	
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color:#FFFFFF;	
+	
+	margin: 0;
+	padding: 0;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+pre.tutcode
+{
+	display: block;
+	padding: 8px;
+	border: 1px solid #aaaaaa;
+	background-color: #eeeeee;
+	overflow:scroll; 
+}
+
+#index
+{
+	margin-top: 0px;
+	float: left;
+	width: 200px;
+	position: absolute;
+	left: 0px;
+	background-color: #F3F3F3;
+	padding: 5px;	
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+#content
+{
+	margin-left: 220px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	/*width: 140px;*/
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+a
+{
+	color: #0000ff;
+}
+
+a:link {
+	color: #0000CC;
+	text-decoration: none;
+}
+
+a:visited {
+    color: #0000CC;
+	text-decoration: none;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #0000CC;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+
+hr
+{
+	border: 0px solid #aaaaaa;
+	background-color:#aaaaaa;
+	height:1px;
+}
+
+		</style>
+	</head>
+
+	<body>
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<h2>Documentation</h2>
+			<ul class="classList">
+				<li><a href="../index.html">Overview</a></li>	
+				<li><a href="http://www.ambiera.com/copperlicht/index.html" target="_blank">Website</a></li>
+				<li><a href="../index.html#tutorials">Tutorials</a></li>	
+				<li><a href="../index.html#classes">Class Index</a></li>	
+			</ul>
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+
+<!-- ============================== header ================================= -->	
+<!-- begin static/header.html -->
+<div id="header"  style="clear: both; padding: 10px; margin-left: -21px; width:100%; background-color: #eeeeee; border-bottom: 1px solid #cccccc; border-right: 1px solid #cccccc;">
+CopperLicht API Documentation 
+</div>
+<!-- end static/header.html -->
+<!-- ============================== class title ============================ -->
+
+<!-- begin static/header.html -->
+<br/>
+<a href="../index.html#tutorials">All tutorials</a>
+<div class="tutorialcontent">
+
+	<h1>CopperLicht Tutorial: Hello World</h1>
+	<br/>
+	This tutorial shows how to display a very simple interactive 3d scene using the 3d engine 
+	<a href="http://www.ambiera.com/copperlicht/index.html">CopperLicht</a>.<br/>
+	The final result of this tutorial will look about like this:
+	<br/>
+	<br/>
+	<div align="center"><img src="images/tut1_overview.jpg" alt="copperlicht tutorial 1"/></div>
+	<br/>
+	
+	<h2>Things you'll need</h2>
+	
+	Things you need for this tutorial are the following:
+	<ul>
+		<li>
+			A text editor for editing HTML and JavaScript. You can use any editor, like Notepad, the editor in Windows. I can also recommend <a target="_blank" href="http://notepad-plus.sourceforge.net/">Notepad++</a>.
+		</li>
+		<li> The CopperLicht SDK. Download it from the <a target="_blank" href="http://www.ambiera.com/copperlicht/index.html">CopperLicht</a> website if you haven't already.
+		</li>	
+		<li>
+			The 3D world editor for CopperLicht, <a target="_blank" href="http://www.ambiera.com/coppercube/index.html">CopperCube</a>. Download and install it from the ambiera website, it is free.
+		</li>	
+	</ul>
+	
+	
+	<br/>
+	<h2>Creating your 3d scene</h2>
+	
+	To show a nice 3D scene in CopperLicht, we first need to create this scene. For this,
+	we use the 3d editor <a href="http://www.ambiera.com/coppercube/index.html">CopperCube</a>. <br/>
+	<br/>
+	Start up CopperCube and create a small 3d scene, just like you want. Maybe use a skybox, and 
+	some cubes or spheres, that should be enough for the beginning. Your scene might look like this
+	afterwards:
+	<br/>
+	<br/>
+	
+	<div align="center"><img src="images/tut1_img1.jpg" /><br/>
+	<small>Your first 3d scene created using CopperCube</small>
+	</div>
+	<br/>
+	
+	<h2>Publishing the scene</h2>
+	
+	To be able to load and show this 3d scene in CopperLicht, we need to export it to an .ccbjs or .ccbz file. CopperCube 
+	saves scenes to its own file format (.ccb) but is able to export these files for usage in CopperLicht
+	as .ccbjs or .ccbz file:
+	
+	<ol>
+		<li>Save you Coppercube document</li>
+		<li>Publish the scene as WebGL: Choose Tools -> Test as JavaScript/WebGL</li>
+	</ol>
+	
+	A browser will open and show your WebGL scene inside. CopperCube has now created a .html file
+	which starts up CopperLicht and loads and displays the .ccbjs or .ccbz file for you. You will find the 
+	.ccbjs/.ccbz file and the textures inside a newly created sub directory where you saved your .ccb file before.
+	<br/>
+	<br/>
+	
+	<h2>Writing CopperLicht code</h2>
+	
+	Now that you published your 3D scene as CopperLicht/WebGL project using CopperCube, it is time
+	to start writing your own code using the 3D engine. When it published your scene, CopperCube has 
+	created a .html file where you saved your .ccb file. Open this file, it should look like this:
+	
+	<pre class="tutcode">
+<font color="#0000CC">&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"&gt;</font><font color="#930F1A">
+  &lt;script type="text/javascript" src="copperlichtdata/copperlicht.js"&gt;&lt;/script&gt;</font><font color="#0000CC">
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div align="center"&gt;
+    &lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+      &lt;/canvas&gt;
+    &lt;/div&gt;</font><font color="#930F1A">
+    &lt;script type="text/javascript"&gt;
+    &lt;!--
+         startCopperLichtFromFile('3darea', 'copperlichtdata/coppercube.ccbz');
+    --&gt;
+    &lt;/script&gt;</font><font color="#0000CC">
+&lt;/body&gt;
+&lt;/html&gt;</font>
+	</pre>
+
+	Take a look at the <i>startCopperLichtFromFile</i> call in the JavaScript part. This is where the 3d engine is 
+	created and told to load the .ccbj file. You can replace the second parameter in that call for example with
+	another file:
+	
+	<pre class="tutcode"><font color="#930F1A">var engine = startCopperLichtFromFile('3darea', 'copperlichtdata/yourfile.ccbj')
+// TODO: do something with the engine	</font>
+	</pre>
+	
+	The object stored in the <i>engine</i> variable in this code above is an instance of the <a href="../symbols/CL3D.CopperLicht.html">CopperLicht class</a>. Starting with this object,
+	you can manipulate everything in the 3d scene. But this should be explained more in detail
+	in the following tutorials.<br/>
+	<br/>
+	
+	You can replace the copperLicht.js include with a possible newer 3D engine version if you prefer, by the way.
+	Happy programming with CopperLicht.
+	
+	
+</div>
+<!-- end static/header.html -->
+
+<br/>
+<br/>
+<a href="../index.html#tutorials">More Tutorials</a>
+<br/>
+<br/>
+<hr/>
+
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy; 2011-2018 N.Gebhardt, Ambiera<br />
+			Documentation generated by JsDoc Toolkit
+		</div>
+	</body>
+</html>

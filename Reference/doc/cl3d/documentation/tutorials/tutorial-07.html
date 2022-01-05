@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>CopperLicht Reference - Tutorial 7</title>
+
+		<style type="text/css">
+			body
+{
+	width: 800px;
+	border: 1px solid #ffffff;
+	
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color:#FFFFFF;	
+	
+	margin: 0;
+	padding: 0;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+pre.tutcode
+{
+	display: block;
+	padding: 8px;
+	border: 1px solid #aaaaaa;
+	background-color: #eeeeee;
+	overflow:scroll; 
+}
+
+#index
+{
+	margin-top: 0px;
+	float: left;
+	width: 200px;
+	position: absolute;
+	left: 0px;
+	background-color: #F3F3F3;
+	padding: 5px;	
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+#content
+{
+	margin-left: 220px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	/*width: 140px;*/
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+a
+{
+	color: #0000ff;
+}
+
+a:link {
+	color: #0000CC;
+	text-decoration: none;
+}
+
+a:visited {
+    color: #0000CC;
+	text-decoration: none;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #0000CC;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+
+hr
+{
+	border: 0px solid #aaaaaa;
+	background-color:#aaaaaa;
+	height:1px;
+}
+
+		</style>
+	</head>
+
+	<body>
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<h2>Documentation</h2>
+			<ul class="classList">
+				<li><a href="../index.html">Overview</a></li>	
+				<li><a href="http://www.ambiera.com/copperlicht/index.html" target="_blank">Website</a></li>
+				<li><a href="../index.html#tutorials">Tutorials</a></li>	
+				<li><a href="../index.html#classes">Class Index</a></li>	
+			</ul>
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+
+<!-- ============================== header ================================= -->	
+<!-- begin static/header.html -->
+<div id="header"  style="clear: both; padding: 10px; margin-left: -21px; width:100%; background-color: #eeeeee; border-bottom: 1px solid #cccccc; border-right: 1px solid #cccccc;">
+CopperLicht API Documentation 
+</div>
+<!-- end static/header.html -->
+<!-- ============================== class title ============================ -->
+
+<!-- begin static/header.html -->
+<br/>
+<a href="../index.html#tutorials">All tutorials</a>
+<div class="tutorialcontent">
+
+	<h1>CopperLicht Tutorial: Character Animation</h1>
+	<br/>
+	This tutorial demonstrates how to do character animation in CopperLicht.<br/>
+	The final result of this tutorial will look about like this:
+	<br/>
+	<br/>
+	<div align="center"><img src="images/tut7_overview.jpg" alt="copperlicht tutorial 7"/><br/>
+	<small>A character which plays animations when a key is pressed and his clones.</small>
+	</div>
+	<br/>
+	<ul>
+		<li>Show <a target="_blank" href="demos/tutorial7/index.html">live demo of this tutorial</a></li>
+		<li>Download this tutorial  <a href="demos/tutorial7.zip">as zip archive.</a></li>
+	</ul>
+		
+	<br/>
+	
+	<h2>Creating the scene</h2>
+	
+	To import your animated 3d mesh, we need the <a href="http://www.ambiera.com/coppercube/index.html">CopperCube</a> editor. Import any animated 3d character or
+	use one of the prefabs which come with CopperCube and place it in your scene. Maybe also add a ground and a skybox to make
+	the scene look more interesting, but this part is optional. Our scene should then look like this:<br/><br/>
+	
+	<div align="center"><img src="images/tut7_img1.jpg" alt="a room"/><br/>
+	</div>
+	<br/>
+	
+	In order for this example to work, set the name the animated mesh to 'soldier' using the properties window in CopperCube.<br/><br/>
+	<b>Note:</b> <i>When publishing your CopperCube scene as WebGL/JavaScript, your animated mesh may not appear in the .html page which is generated by CopperCube. This is because
+	older versions of CopperCube include a CopperLicht version which does not yet support animated Meshes in WebGL. The scene will work anyway, the mesh is still in the .ccbjs or .ccbz file.
+	You can either ignore this or replace the copperlicht.js written out by copperCube with the latest CopperLicht.js from the CopperLicht SDK.</i><br/><br/>
+	In the <a href="demos/tutorial7.zip">zip archive</a> of this tutorial, you'll find a .ccb file named animation.ccb which contains exactly this example, you can also use this one.
+	<br/><br/>
+	Use CopperCube to save the scene into a directory of your choice and publish the scene as WebGL/JavaScript (Choose Tools -> Test as JavaScript/WebGL). This will create a .ccbjs or .ccbz
+	file with this scene which we can load using CopperLicht.
+	
+	
+
+	<h2>Writing CopperLicht code</h2>
+	
+	Now create a .html file in that directory and paste the following code into it. What it does will be explained in detail below.
+	
+	<pre class="tutcode" style="max-height: 600px; overflow:scroll; ">
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"&gt;
+	&lt;script type="text/javascript" src="copperlichtdata/copperlicht.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+		&lt;b&gt;Tutorial 07: Character Animation.&lt;/b&gt;&lt;br/&gt;
+	Demonstrates how to character animation / play skeletal animations&lt;br/&gt;&lt;br/&gt;
+	&lt;div style="width:640px; margin:auto; position:relative; font-size: 9pt; color: #777777;"&gt;
+		&lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+		&lt;/canvas&gt;
+		&lt;div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:420px; 
+				background-color:#000000; height:37px; width:300px; border-radius:5px; 
+				border:1px solid #777777; opacity:0.5;" id="helptext"&gt; 
+			Press space to change the animation, press 'C' to clone the soldier. 
+			Use cursor keys and mouse to move the camera.
+		&lt;/div&gt; 
+	&lt;/div&gt;
+	
+	&lt;script type="text/javascript"&gt;
+	&lt;!--
+	var engine = startCopperLichtFromFile('3darea', 'copperlichtdata/animation.ccbjs');
+	
+	// every time the user presses space, we want to do a collision test with the wall
+	// and create a cube where we hit the wall
+	
+	var lastPlayedAnimation = 0;
+	
+	document.onkeyup = function(event)
+	{
+		var scene = engine.getScene();
+		if (!scene)
+			return;
+			
+		// soldier is an AnimatedMeshSceneNode.
+		var soldier = scene.getSceneNodeFromName('soldier');
+		
+		if (soldier)
+		{
+			if (event.keyCode == 32) // space has been pressed
+			{			
+				// switch to next animation				
+				// select the next animation:
+				
+				var animations = ['look', 'walk', 'attack', 'die'];
+				++lastPlayedAnimation;
+				if (lastPlayedAnimation &gt; animations.length - 1) 
+					lastPlayedAnimation = 0;
+					
+				var nextAnimationName = animations[lastPlayedAnimation];
+					
+				// and set it to be played
+				
+				soldier.setAnimation(nextAnimationName);
+			}	
+			else
+			if (event.keyCode == 67 || event.keyCode == 99) // 'c' has been pressed
+			{
+				// clone soldier
+				
+				var clone = soldier.createClone(scene.getRootSceneNode());
+				clone.Pos.X += (Math.random() * 50) - 25;
+				clone.Pos.Z += (Math.random() * 50) - 25;
+			}
+		}
+		
+		// we need to call the key handler of the 3d engine as well, so that the user is
+		// able to move the camera using the keys
+		engine.handleKeyUp(event);
+	};
+	--&gt;
+	&lt;/script&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+	<br/>
+	<br/>
+	
+	<h2>What the code does</h2>
+	As always, the first few lines of the html code are creating a canvas element inside a container. Inside this container, there is a &lt;div&gt;, used for the 2d overlay. The style of these divs
+	with its absolute positioning is making it possible to move them over the canvas:
+	
+	<pre class="tutcode" >&lt;html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"&gt;
+	&lt;script type="text/javascript" src="copperlichtdata/copperlicht.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+		&lt;b&gt;Tutorial 07: Character Animation.&lt;/b&gt;&lt;br/&gt;
+	Demonstrates how to character animation / play skeletal animations&lt;br/&gt;&lt;br/&gt;
+	&lt;div style="width:640px; margin:auto; position:relative; font-size: 9pt; color: #777777;"&gt;
+		&lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+		&lt;/canvas&gt;
+		&lt;div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:420px; 
+				background-color:#000000; height:37px; width:300px; border-radius:5px; 
+				border:1px solid #777777; opacity:0.5;" id="helptext"&gt; 
+			Press space to change the animation, press 'C' to clone the soldier. 
+			Use cursor keys and mouse to move the camera.
+		&lt;/div&gt; 
+	&lt;/div&gt;</pre>
+
+	So let's start with the javascript code. First, we simply initialize the 3d engine and tell it to load the scene file we created in the editor. You might have to adjust
+	the file name of the .ccbjs file to fit the name you picked when saving the scene. 
+	
+	<pre class="tutcode" >&lt;script type="text/javascript"&gt;
+  &lt;!--
+  var engine = startCopperLichtFromFile('3darea', 'copperlichtdata/animation.ccbjs');
+  </pre>
+	
+	Next, we register our own function to intercept key events: If the user presses 'space', we want the soldier in the scene
+	play another animation, and if the user presses the key 'c', we want to create a clone of that soldier at a random position.
+	For this, we first need to find the scene node of the soldier in the scene. We search for it by using it's name in
+	scene.getSceneNodeFromName(). If you named the scene node of the animated mesh differently, you'll have to adjust that name in the code.
+	
+	<pre class="tutcode" >
+	document.onkeyup = function(event)
+	{
+		var scene = engine.getScene();
+		if (!scene)
+			return;
+			
+		// soldier is an AnimatedMeshSceneNode.
+		var soldier = scene.getSceneNodeFromName('soldier');
+		
+		if (soldier)
+		{
+ </pre>
+  
+   Next, do something depending on the pressed key. If the user pressed space (key code 32), then play an animation. The soldier in this example has the animations 'look', 'walk', 'attack' and 'die'.
+   If your mesh has differently named animations, you should adjust the code in this place. Alternatively, you can also simply enumerate the animations of this model using soldier.getNamedAnimationCount()
+   and soldier.getNamedAnimationInfo(). But anyway how you are dogin it, it's basically just calling the function soldier.setAnimation() then, to switch to another animation.<br/>
+   When the user presses the key 'C' (keycode 67 or 99), we create a copy of the soldier and place it at a random position.
+ 
+	<pre class="tutcode" >
+	if (event.keyCode == 32) // space has been pressed
+	{			
+		// switch to next animation				
+		// select the next animation:
+		
+		var animations = ['look', 'walk', 'attack', 'die'];
+		++lastPlayedAnimation;
+		if (lastPlayedAnimation &gt; animations.length - 1) 
+			lastPlayedAnimation = 0;
+			
+		var nextAnimationName = animations[lastPlayedAnimation];
+			
+		// and set it to be played
+		
+		soldier.setAnimation(nextAnimationName);
+	}	
+	else
+	if (event.keyCode == 67 || event.keyCode == 99) // 'c' has been pressed
+	{
+		// clone soldier
+		
+		var clone = soldier.createClone(scene.getRootSceneNode());
+		clone.Pos.X += (Math.random() * 50) - 25;
+		clone.Pos.Z += (Math.random() * 50) - 25;
+	}
+	
+	// we need to call the key handler of the 3d engine as well, so that the user is
+	// able to move the camera using the keys
+	engine.handleKeyUp(event);
+};
+	</pre>
+	
+	And basically, that's it. Now you know how to use skeletal animated characters in CopperLicht.<br/>
+
+	
+</div>
+<!-- end static/header.html -->
+
+<br/>
+<br/>
+<a href="../index.html#tutorials">More Tutorials</a>
+<br/>
+<br/>
+<hr/>
+
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy; 2011-2018 N.Gebhardt, Ambiera<br />
+			Documentation generated by JsDoc Toolkit
+		</div>
+	</body>
+</html>

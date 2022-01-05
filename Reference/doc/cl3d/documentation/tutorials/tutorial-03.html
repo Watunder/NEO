@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>CopperLicht Reference - Tutorial 3</title>
+
+		<style type="text/css">
+			body
+{
+	width: 800px;
+	border: 1px solid #ffffff;
+	
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color:#FFFFFF;	
+	
+	margin: 0;
+	padding: 0;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+pre.tutcode
+{
+	display: block;
+	padding: 8px;
+	border: 1px solid #aaaaaa;
+	background-color: #eeeeee;
+	overflow:scroll; 
+}
+
+#index
+{
+	margin-top: 0px;
+	float: left;
+	width: 200px;
+	position: absolute;
+	left: 0px;
+	background-color: #F3F3F3;
+	padding: 5px;	
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+#content
+{
+	margin-left: 220px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	/*width: 140px;*/
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+a
+{
+	color: #0000ff;
+}
+
+a:link {
+	color: #0000CC;
+	text-decoration: none;
+}
+
+a:visited {
+    color: #0000CC;
+	text-decoration: none;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #0000CC;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+
+hr
+{
+	border: 0px solid #aaaaaa;
+	background-color:#aaaaaa;
+	height:1px;
+}
+
+		</style>
+	</head>
+
+	<body>
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<h2>Documentation</h2>
+			<ul class="classList">
+				<li><a href="../index.html">Overview</a></li>	
+				<li><a href="http://www.ambiera.com/copperlicht/index.html" target="_blank">Website</a></li>
+				<li><a href="../index.html#tutorials">Tutorials</a></li>	
+				<li><a href="../index.html#classes">Class Index</a></li>	
+			</ul>
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+
+<!-- ============================== header ================================= -->	
+<!-- begin static/header.html -->
+<div id="header"  style="clear: both; padding: 10px; margin-left: -21px; width:100%; background-color: #eeeeee; border-bottom: 1px solid #cccccc; border-right: 1px solid #cccccc;">
+CopperLicht API Documentation 
+</div>
+<!-- end static/header.html -->
+<!-- ============================== class title ============================ -->
+
+<!-- begin static/header.html -->
+<br/>
+<a href="../index.html#tutorials">All tutorials</a>
+<div class="tutorialcontent">
+
+	<h1>CopperLicht Tutorial: Custom Scene Nodes</h1>
+	<br/>
+	This tutorial will show you how to create a custom scene node in order to render own 3d items,
+	and how to use CopperLicht without the editor, CopperCube. You will also see how to load textures, use BillBoards and Cameras and how to change Materials.<br/>
+	The final result of this tutorial will look about like this:
+	<br/>
+	<br/>
+	<div align="center"><img src="images/tut3_overview.jpg" alt="copperlicht tutorial 1"/><br/>
+	<small>A very simple 3d scene node, below a 3d billboard.</small>
+	</div>
+	<br/>
+	<ul>
+		<li>Show <a target="_blank" href="demos/tutorial3/index.html">live demo of this tutorial</a></li>
+		<li>Download this tutorial  <a href="demos/tutorial3.zip">as zip archive.</a></li>
+	</ul>
+	<br/>
+
+	<h2>Writing CopperLicht code</h2>
+	
+	In contrast to the other tutorials, we don't need the 3d editor CopperCube at all, everything we are doing here is writing code. To keep this simple and short,
+	the following is the full code of this example. I'll explain it in detail below. 
+	
+	<pre class="tutcode" style="max-height: 600px; overflow:scroll; ">
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"&gt;
+	&lt;script type="text/javascript" src="copperlicht.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div align="center"&gt;
+		&lt;b&gt;Tutorial 03: Showing how to create your own scene node.&lt;/b&gt;&lt;br/&gt;
+		&lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+		&lt;/canvas&gt;
+	&lt;/div&gt;
+	&lt;script type="text/javascript"&gt;
+	&lt;!--
+	main = function()
+	{
+		// create the 3d engine
+		var engine = new CL3D.CopperLicht('3darea');
+		
+		if (!engine.initRenderer())
+			return; // this browser doesn't support WebGL
+			
+		// add a new 3d scene
+		
+		var scene = new CL3D.Scene();
+		engine.addScene(scene);
+		
+		scene.setBackgroundColor(CL3D.createColor(1, 0, 0, 64));
+		
+		// add our own scene node
+		var mynode = new MySceneNode(engine);
+		scene.getRootSceneNode().addChild(mynode);
+		mynode.addAnimator(new CL3D.AnimatorRotation(new CL3D.Vect3d(0, 0.6, 0.8)));
+		
+		// add a transparent billboard scene node with a text sign
+		var billboard = new CL3D.BillboardSceneNode();
+		billboard.setSize(20,20);
+		billboard.Pos.Y = 30;
+		billboard.getMaterial(0).Tex1 = engine.getTextureManager().getTexture("actionsign.jpg", true);
+		billboard.getMaterial(0).Type = CL3D.Material.EMT_TRANSPARENT_ADD_COLOR;
+		scene.getRootSceneNode().addChild(billboard);
+							
+		// add a user controlled camera with a first person shooter style camera controller
+		var cam = new CL3D.CameraSceneNode();
+		cam.Pos.X = 50;
+		cam.Pos.Y = 20;
+		
+		var animator = new CL3D.AnimatorCameraFPS(cam, engine);										
+		cam.addAnimator(animator);										
+		animator.lookAt(new CL3D.Vect3d(0,20,0));			
+		
+		scene.getRootSceneNode().addChild(cam);
+		scene.setActiveCamera(cam);					
+	}
+	
+	// helper function for quickly creating a 3d vertex from 3d position and texture coodinates
+	createVertex = function(x, y, z, s, t)
+	{
+		var vtx = new CL3D.Vertex3D(true);
+		vtx.Pos.X = x;
+		vtx.Pos.Y = y;
+		vtx.Pos.Z = z;
+		vtx.TCoords.X = s;
+		vtx.TCoords.Y = t;
+		return vtx;
+	}
+	
+	// our own scene node implementation
+	MySceneNode = function(engine)
+	{
+		this.init();  // init scene node specific members
+		
+		// create a 3d mesh with one mesh buffer
+		
+		this.MyMesh = new CL3D.Mesh();
+		var buf = new CL3D.MeshBuffer();
+		this.MyMesh.AddMeshBuffer(buf);
+		
+		// set indices and vertices
+							
+		buf.Indices = [0,2,3, 2,1,3, 1,0,3, 2,0,1];
+		
+		buf.Vertices.push(createVertex( 0, 0,  10,   0, 0));
+		buf.Vertices.push(createVertex( 10,0, -10,   1, 0));
+		buf.Vertices.push(createVertex( 0, 20, 0,    0, 1));
+		buf.Vertices.push(createVertex(-10,20,-10,   1, 1));
+		
+		// set the texture of the material
+		
+		buf.Mat.Tex1 = engine.getTextureManager().getTexture("test.jpg", true);
+	}
+	MySceneNode.prototype = new CL3D.SceneNode(); // derive from SceneNode
+	
+	MySceneNode.prototype.OnRegisterSceneNode = function(scene)
+	{
+		scene.registerNodeForRendering(this, CL3D.Scene.RENDER_MODE_DEFAULT);
+		CL3D.SceneNode.prototype.OnRegisterSceneNode.call(this, scene); // call base class
+	}
+	
+	MySceneNode.prototype.render = function(renderer)
+	{
+		renderer.setWorld(this.getAbsoluteTransformation());
+		renderer.drawMesh(this.MyMesh);
+	}
+	
+	main();
+	--&gt;
+	&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+	</pre>
+	
+	Create a .html file and paste this code into there, place the copperlicht.js file from the CopperLicht SDK in the same directory, and 
+	add two .jpg files named test.jpg and actionsign.jpg which are used in this example as textures.
+	<br/>
+	<br/>
+	
+	<h2>What the code does</h2>
+	The first few lines should be quite self explaining:
+	<pre class="tutcode" ><font color="#008000">// create the 3d engine</font>
+var engine = new CL3D.CopperLicht('3darea');
+
+if (!engine.initRenderer())
+   return; <font color="#008000">// this browser doesn't support WebGL</font>
+	
+<font color="#008000">// add a new 3d scene</font>
+var scene = new CL3D.Scene();
+engine.addScene(scene);
+
+scene.setBackgroundColor(CL3D.createColor(1, 0, 0, 64));</pre>
+
+	Here, the 3d engine is initialized for the canvas with the id '3darea' and a 3d scene is created, with a blue background color.<br/>
+	The next piece of code should be more interesting:
+	
+	<pre class="tutcode" ><font color="#008000">// add our own scene node</font>
+var mynode = new MySceneNode(engine);
+scene.getRootSceneNode().addChild(mynode);
+mynode.addAnimator(new CL3D.AnimatorRotation(new CL3D.Vect3d(0, 0.6, 0.8)));</pre>
+
+	This is where we add our own scene node to the 3d scene. So, what is a scene node at all? And why should you want to create your own?<br/><br/>
+	CopperLicht renders the 3d graphics using a scene graph. Everything in the graph is a node which might have children. For example there might be a city, represented by a scene node. 
+	This city-SceneNode might have a child, for example a car. And that car might have a child which is a person, driving in the car. If the car-SceneNode now is told
+	to move, all children in it are moved as well. If the car scene node is made invisible, also all child scene nodes like the person in that car is then invisible as well and need not 
+	to be rendered.<br/>
+	Scene nodes can draw different things in CopperLicht, the most common thing is probably the <a href="../symbols/CL3D.MeshSceneNode.html">MeshSceneNode</a>, which draws
+	a chunk of 3d geometry, for example an imported 3D Studio .3ds file. Another scene node type is for example the <a href="../symbols/CL3D.CameraSceneNode.html">CameraSceneNode</a> representing 
+	the camera from which the 3d scene is drawn.<br/>
+	<br/>
+	SceneNodes in CopperLicht do have a lot of properties, like materials and have the possibility to be animated, so, by creating your own SceneNode, you can draw 
+	3d stuff using your own technique and take advantage of all the features of CopperCube like transparent sorting, animators and similar without the need to think about this.<br/>
+	<br/>
+	In the code above, we only added your scene node to the scene graph. We'll implement the scene node later and explain everything in detail then. Lets go on in the code and see what it is doing next:
+	
+	<pre class="tutcode" ><font color="#008000">// add a transparent billboard scene node with a text sign</font>
+var billboard = new CL3D.BillboardSceneNode();
+billboard.setSize(20,20);
+billboard.Pos.Y = 30;
+billboard.getMaterial(0).Tex1 = engine.getTextureManager().getTexture("actionsign.jpg", true);
+billboard.getMaterial(0).Type = CL3D.Material.EMT_TRANSPARENT_ADD_COLOR;
+scene.getRootSceneNode().addChild(billboard);
+	</pre>
+	
+	This code adds a second scene node to the scene, a built-in scene node named <a href="../symbols/CL3D.BillboardSceneNode.html">BillboardSceneNode</a>. This is a 2d sprite, always facing 
+	to the camera. In this code, we set the size to 20x20, change the position to be a bit higher, and set a material texture and a material type. Notice that using
+	<i>engine.getTextureManager().getTexture("actionsign.jpg", true);</i> we can load textures easily. The <i>Material.EMT_TRANSPARENT_ADD_COLOR</i> material type is 
+	a material which simply draws the texture in a transparent way, adding the color to the background. Calling <i>scene.getRootSceneNode().addChild(billboard);</i>
+	adds the Billboard to the scene graph.
+	
+	<pre class="tutcode" ><font color="#008000">// add a user controlled camera with a first person shooter style camera controller</font>
+var cam = new CL3D.CameraSceneNode();
+cam.Pos.X = 50;
+cam.Pos.Y = 20;
+
+var animator = new CL3D.AnimatorCameraFPS(cam, engine);										
+cam.addAnimator(animator);										
+animator.lookAt(new CL3D.Vect3d(0,20,0));			
+
+scene.getRootSceneNode().addChild(cam);
+scene.setActiveCamera(cam);		
+	</pre>
+	
+	The code above adds a third scene node to the scene graph, without we wouldn't see anyhting: A <a href="../symbols/CL3D.CameraSceneNode.html">CameraSceneNode</a>. In order to make it
+	controllable using mouse and keyboard, we add a <a href="../symbols/CL3D.AnimatorCameraFPS.html">AnimatorCameraFPS</a> to it. You can comment out this code if you like, the camera wouldn't
+	move then anymore. The last two lines add the camera to the scene graph and tell the engine to use this camera to render the scene from (<i>scene.setActiveCamera(cam)</i>).
+	<br/>
+	<br/>
+	Basically, this was it, now lets start implementing our own scene node, as announced previously:
+	
+	<pre class="tutcode" ><font color="#008000">// helper function for quickly creating a 3d vertex from 3d position and texture coodinates</font>
+createVertex = function(x, y, z, s, t)
+{
+	var vtx = new CL3D.Vertex3D(true);
+	vtx.Pos.X = x;
+	vtx.Pos.Y = y;
+	vtx.Pos.Z = z;
+	vtx.TCoords.X = s;
+	vtx.TCoords.Y = t;
+	return vtx;
+}
+	</pre>
+	
+	The createVertex function is simply a helper function to create a <a href="../symbols/CL3D.Vertex3D.html">Vertex3D</a>, to shorten the code. A Vertex3D is the structure which holds
+	the vertices of the 3d geometry. If you have an array with 3 vertices and have another array with 3 indices to these vertices, you have a triangle. And this is the way how 
+	drawing 3d graphics works.<br/>
+	Now implement our own scene node, named 'MySceneNode' do do just that, drawing some 3d triangles:
+	<pre class="tutcode" ><font color="#008000">// our own scene node implementation</font>
+MySceneNode = function(engine)
+{
+    this.init();  <font color="#008000">// init scene node specific members</font>
+    
+    <font color="#008000">// create a 3d mesh with one mesh buffer</font>
+    
+    this.MyMesh = new CL3D.Mesh();
+    var buf = new CL3D.MeshBuffer();
+    this.MyMesh.AddMeshBuffer(buf);
+    
+    <font color="#008000">// set indices and vertices</font>
+                        
+    buf.Indices = [0,2,3, 2,1,3, 1,0,3, 2,0,1];
+    
+    buf.Vertices.push(createVertex( 0, 0,  10,   0, 0));
+    buf.Vertices.push(createVertex( 10,0, -10,   1, 0));
+    buf.Vertices.push(createVertex( 0, 20, 0,    0, 1));
+    buf.Vertices.push(createVertex(-10,20,-10,   1, 1));
+    
+    <font color="#008000">// set the texture of the material</font>
+    
+    buf.Mat.Tex1 = engine.getTextureManager().getTexture("test.jpg", true);
+}
+MySceneNode.prototype = new CL3D.SceneNode(); <font color="#008000">// derive from SceneNode</font>
+	</pre>
+	
+	This creates a class named 'MySceneNode' and derives it from the class <a href="../symbols/CL3D.SceneNode.html">SceneNode</a>. In the function, we create a <a href="../symbols/CL3D.Mesh.html">Mesh</a>,
+	add a <a href="../symbols/CL3D.MeshBuffer.html">MeshBuffer</a> to it and fill it with a few Vertices and Indices. Also, we set the texture of the material of the mesh buffer. <br/>
+	The only thing remaining is to draw these vertices, so we need to implement these two functions:
+	
+	<pre class="tutcode" >MySceneNode.prototype.OnRegisterSceneNode = function(scene)
+{
+	scene.registerNodeForRendering(this, CL3D.Scene.RENDER_MODE_DEFAULT);
+	CL3D.SceneNode.prototype.OnRegisterSceneNode.call(this, scene); <font color="#008000">// call base class</font>
+}
+
+MySceneNode.prototype.render = function(renderer)
+{
+	renderer.setWorld(this.getAbsoluteTransformation());
+	renderer.drawMesh(this.MyMesh);
+}
+</pre>
+	
+	The <i>OnRegisterSceneNode</i> function gets called by CopperLicht just before the rendering process of the whole scene. 
+	Nodes may register themselves in the rendering pipeline during this call, precalculate the geometry which should be renderered, 
+	and prevent their children from being able to register themselves if they are clipped by simply not calling their OnRegisterSceneNode method.
+	<br/><br/>
+	If the scene nodes registers itself, the <i>render</i> function is called by CopperLicht at the right time, and the scene node can render itself, causing the 3d geometry to appear on the screen. While
+	rendering, we set the transformation of this scene node using <i>setWorld</i> and render the geometry using <i>drawMesh</i>.
+	<br/><br/>
+	If you run this example, you'll notice that your scene node is spinning around, although we didn't write any code for this. The reason for this is that when we added the scene node to the 
+	scene graph above, we also added an <a href="../symbols/CL3D.Animator.html">Animator</a> to it using <i>mynode.addAnimator(new CL3D.AnimatorRotation(new CL3D.Vect3d(0, 0.6, 0.8)));</i>. This demonstrates that
+	your scene node also works with animators. Nice. 
+ <br/><br/>
+  That's it, now you know how to create your own scene nodes.  
+	
+</div>
+<!-- end static/header.html -->
+
+<br/>
+<br/>
+<a href="../index.html#tutorials">More Tutorials</a>
+<br/>
+<br/>
+<hr/>
+
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy; 2011-2018 N.Gebhardt, Ambiera<br />
+			Documentation generated by JsDoc Toolkit
+		</div>
+	</body>
+</html>

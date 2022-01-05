@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>CopperLicht Reference - Tutorial 2</title>
+
+		<style type="text/css">
+			body
+{
+	width: 800px;
+	border: 1px solid #ffffff;
+	
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color:#FFFFFF;	
+	
+	margin: 0;
+	padding: 0;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+pre.tutcode
+{
+	display: block;
+	padding: 8px;
+	border: 1px solid #aaaaaa;
+	background-color: #eeeeee;
+	overflow:scroll; 
+}
+
+#index
+{
+	margin-top: 0px;
+	float: left;
+	width: 200px;
+	position: absolute;
+	left: 0px;
+	background-color: #F3F3F3;
+	padding: 5px;	
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+#content
+{
+	margin-left: 220px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	/*width: 140px;*/
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+a
+{
+	color: #0000ff;
+}
+
+a:link {
+	color: #0000CC;
+	text-decoration: none;
+}
+
+a:visited {
+    color: #0000CC;
+	text-decoration: none;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #0000CC;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+
+hr
+{
+	border: 0px solid #aaaaaa;
+	background-color:#aaaaaa;
+	height:1px;
+}
+
+		</style>
+	</head>
+
+	<body>
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<h2>Documentation</h2>
+			<ul class="classList">
+				<li><a href="../index.html">Overview</a></li>	
+				<li><a href="http://www.ambiera.com/copperlicht/index.html" target="_blank">Website</a></li>
+				<li><a href="../index.html#tutorials">Tutorials</a></li>	
+				<li><a href="../index.html#classes">Class Index</a></li>	
+			</ul>
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+
+<!-- ============================== header ================================= -->	
+<!-- begin static/header.html -->
+<div id="header"  style="clear: both; padding: 10px; margin-left: -21px; width:100%; background-color: #eeeeee; border-bottom: 1px solid #cccccc; border-right: 1px solid #cccccc;">
+CopperLicht API Documentation 
+</div>
+<!-- end static/header.html -->
+<!-- ============================== class title ============================ -->
+
+<!-- begin static/header.html -->
+<br/>
+<a href="../index.html#tutorials">All tutorials</a>
+<div class="tutorialcontent">
+
+	<h1>CopperLicht Tutorial: Movement and Keyboard input</h1>
+	<br/>
+	This tutorial shows how move 3d objects in your 3d scene using the keyboard
+	and how to use Animators.<br/>
+	The final result of this tutorial will look about like this:
+	<br/>
+	<br/>
+	<div align="center"><img src="images/tut2_overview.jpg" alt="copperlicht tutorial 1"/><br/>
+	<small>A cube which can be moved using the keys 'F' and 'G', and a rotating sphere.</small>
+	</div>
+	<br/>
+	<ul>
+		<li>Show <a target="_blank" href="demos/tutorial2/index.html">live demo of this tutorial</a></li>
+		<li>Download this tutorial  <a href="demos/tutorial2.zip">as zip archive.</a></li>
+	</ul>
+	<br/>
+	
+	<h2>Things you'll need</h2>
+	
+	If you haven't read the <a href="tutorial-01.html">first tutorial</a> yet, you should do so now. It shows how to create a basic 3d scene.
+	
+	
+	<br/>
+	<br/>
+	<h2>Creating your 3d scene</h2>
+	
+	For this tutorial, we need a very simple 3d scene. As in the first tutorial, we created it 
+	in the editor <a href="http://www.ambiera.com/coppercube/index.html">CopperCube</a>. <br/>
+	<br/>
+	Start up CopperCube and place a cube, a sphere and a plane in the 3d view. Ensure that the name of the Cube is 
+	'cubeMesh1' and the name of your sphere is 'sphereMesh1'. <br/>
+	Your scene should look like this afterwards:
+	<br/>
+	<br/>
+	
+	<div align="center"><img src="images/tut2_img1.jpg" /><br/>
+	<small>The 3d scene needed for this tutorial, created using CopperCube</small>
+	</div>
+	<br/>
+	<br/>
+	
+	<h2>Writing CopperLicht code</h2>
+	
+	As in the first tutorial, to be able to load and show this 3d scene in CopperLicht, we need to export it to an .ccbjs or .ccbz file.
+	Save you Coppercube document to a directory of your choice and  publish the scene as WebGL: Choose Tools -> Test as JavaScript/WebGL.
+	Open the created .html file using your text editor, it will look like this:
+	
+	<pre class="tutcode">
+<font color="#0000CC">&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"&gt;</font><font color="#930F1A">
+  &lt;script type="text/javascript" src="copperlichtdata/copperlicht.js"&gt;&lt;/script&gt;</font><font color="#0000CC">
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div align="center"&gt;
+    &lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+      &lt;/canvas&gt;
+    &lt;/div&gt;</font><font color="#930F1A">
+    &lt;script type="text/javascript"&gt;
+    &lt;!--
+         startCopperLichtFromFile('3darea', 'copperlichtdata/tutorial-2.ccbjs');
+    --&gt;
+    &lt;/script&gt;</font><font color="#0000CC">
+&lt;/body&gt;
+&lt;/html&gt;</font>
+	</pre>
+
+	We will now replace the code section (the part with the <i>startCopperLichtFromFile</i> call) with our own code. Simply 
+	replace the whole javaScript section with the following:
+		
+	<pre class="tutcode">&lt;script type="text/javascript"&gt;
+  &lt;!--
+      <font color="#000080">var</font> engine = startCopperLichtFromFile('3darea', 'copperlichtdata/tutorial-2.ccbjs');
+      <font color="#000080">var</font> cubeSceneNode = null;
+      
+      <font color="#008000">// this is called when loading the 3d scene has finished</font>
+      engine.OnLoadingComplete = <font color="#000080">function</font>() 
+      {          
+        <font color="#000080">var</font> scene = engine.getScene();
+        <font color="#000080">if</font> (scene)
+        {
+          <font color="#008000">// find the cube scene node</font>
+          cubeSceneNode = scene.getSceneNodeFromName('cubeMesh1');
+          
+         <font color="#008000"> // also, force the 3d engine to update the scene every frame</font>
+          scene.setRedrawMode(CL3D.Scene.REDRAW_EVERY_FRAME);
+          
+          <font color="#008000">// additional, let the sphere constantly rotate</font>
+          <font color="#000080">var</font> sphereSceneNode = scene.getSceneNodeFromName('sphereMesh1');
+          <font color="#000080">if</font> (sphereSceneNode)
+            sphereSceneNode.addAnimator(<font color="#000080">new</font> CL3D.AnimatorRotation(<font color="#000080">new</font> CL3D.Vect3d(0, 1.6, 0.8)));
+        }
+      }
+      
+      document.onkeydown = function(event)
+      {
+        <font color="#000080">var</font> key = String.fromCharCode(event.keyCode);
+        
+        <font color="#008000">// when pressed 'F', move the cube scene node a bit up</font>
+        <font color="#000080">if</font> (key == 'F' && cubeSceneNode)
+          cubeSceneNode.Pos.Y += 5;
+          
+        <font color="#008000">// when pressed 'G', move the cube scene node a bit down</font>
+        <font color="#000080">if</font> (key == 'G' && cubeSceneNode)
+          cubeSceneNode.Pos.Y -= 5;
+        
+        <font color="#008000">// we need to call the key handler of the 3d engine as well, so that the user is
+        // able to move the camera using the keys</font>
+        engine.handleKeyDown(event);
+      };
+  --&gt;
+  &lt;/script&gt;
+	</pre>
+	
+	Now when you start up the html file, you will see the sphere rotating, and be able to move the cube when pressing
+	the keys F and G. I'll explain here a bit in detail how the code works.
+	<br/>
+	<br/>
+	
+	<h2>How the code works</h2>
+	Using the line 
+	<pre>var engine = startCopperLichtFromFile('3darea', 'copperlichtdata/tutorial-2.ccbjs');</pre>
+	we store an instance of the  <a href="../symbols/CL3D.CopperLicht.html">CopperLicht class</a> in the variable 'engine' and tell
+	CopperLicht to load the file 'copperlichtdata/tutorial-2.ccbjs'. CopperLicht will use the &lt;canvas&gt; element in
+	this html document with the id '3darea' as specified in the first parameter.<br/>
+	Using this 'engine' object,	we can manipulate the whole 3d scene. To get notified when CopperLicht has finished loading
+	the 3d scene from the file, we register the event in this line:
+	<pre><font color="#008000">// this is called when loading the 3d scene has finished</font>
+   engine.OnLoadingComplete = <font color="#000080">function</font>() 
+   {    </pre>
+	In that function, we search the <a href="../symbols/CL3D.Scene.html">Scene</a> for the scene nodes with the names 'cubeMesh1' (and later also 'sphereMesh1'):
+	<pre><font color="#000080">var</font> scene = engine.getScene();
+<font color="#000080">if</font> (scene)
+{
+  <font color="#008000">// find the cube scene node</font>
+  cubeSceneNode = scene.getSceneNodeFromName('cubeMesh1');</pre>
+	These names should have set in the editor for these scene nodes. The cubeMesh is stored in the var 'cubemesh' so we can change its position later when the keys are pressed.<br/>
+	We also change the redraw mode of the scene using 
+	<pre> <font color="#008000"> // also, force the 3d engine to update the scene every frame</font>
+scene.setRedrawMode(Scene.REDRAW_EVERY_FRAME);
+	</pre>
+	In this way, we do not need to call <a href="../symbols/CL3D.Scene.html#forceRedrawNextFrame">CL3D.Scene.forceRedrawNextFrame()</a> all the time once we made a small change the 3d scene. You can set this
+	setting also in the CopperCube editor, in the publishing settings.
+	<br/>
+	<br/>
+	To make the sphere constantly rotate, we use a feature of CopperLicht called <a href="../symbols/CL3D.Animator.html">Animator</a>s. Animators are classes which manipulate scene nodes in a simple way. 
+	There are animators which are able to move scene nodes along a path, to animate their textures or to rotate them. In this case we create a new <a href="../symbols/CL3D.AnimatorRotation.html">AnimatorRotation</a>,
+	set a rotation speed of (0, 1.6, 0.8) and add it to the sphere, causing it to constantly rotate:
+	<pre> <font color="#008000">// additional, let the sphere constantly rotate</font>
+<font color="#000080">var</font> sphereSceneNode = scene.getSceneNodeFromName('sphereMesh1');
+<font color="#000080">if</font> (sphereSceneNode)
+  sphereSceneNode.addAnimator(<font color="#000080">new</font> AnimatorRotation(<font color="#000080">new</font> Vect3d(0, 1.6, 0.8)));
+	</pre>
+	
+	<h2>The Keyboard input part</h2>
+	The last part in this tutorial makes the cube move up and down when the user presses the keys 'F' and 'G'. For this, a function is 
+	created to receive keyboard input:
+	<pre>document.onkeydown = function(event)
+{
+	</pre>
+	Note that when an instance of the CopperLicht engine is created, it will register the keyboard handler for itself. By registering our own keyboard handler,
+	we remove the keyboard input from the CopperLicht engine. That's why we forward keyboard input to CopperLicht in the last line of this function:
+	<pre><font color="#008000">// we need to call the key handler of the 3d engine as well, so that the user is
+// able to move the camera using the keys</font>
+engine.handleKeyDown(event);
+	</pre>
+	
+	But before this, we move the Cube when the keys are pressed:
+	<pre><font color="#000080">var</font> key = String.fromCharCode(event.keyCode);
+        
+<font color="#008000">// when pressed 'F', move the cube scene node a bit up</font>
+<font color="#000080">if</font> (key == 'F' && cubeSceneNode)
+  cubeSceneNode.Pos.Y += 5;
+  
+<font color="#008000">// when pressed 'G', move the cube scene node a bit down</font>
+<font color="#000080">if</font> (key == 'G' && cubeSceneNode)
+  cubeSceneNode.Pos.Y -= 5;</pre>
+  
+  This simply changes the position of the cubeSceneNode up or down. Note that if we hadn't changed the redraw mode to 'every frame' before
+  using scene.setRedrawMode(CL3D.Scene.REDRAW_EVERY_FRAME);, we would have needed to call Scene.forceRedrawNextFrame() after this change, so
+  that CopperLicht knows we want to redraw the frame because we manually changed the position of the cube.<br/>
+  Instead of changing the position using .Pos, you could also try out changing the rotation using .Rot or the scale of the scene node, using
+  .Scale. <br/><br/>
+  That's it, now you know how to manipulate scene nodes basically.  
+	
+</div>
+<!-- end static/header.html -->
+
+<br/>
+<br/>
+<a href="../index.html#tutorials">More Tutorials</a>
+<br/>
+<br/>
+<hr/>
+
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy; 2011-2018 N.Gebhardt, Ambiera<br />
+			Documentation generated by JsDoc Toolkit
+		</div>
+	</body>
+</html>

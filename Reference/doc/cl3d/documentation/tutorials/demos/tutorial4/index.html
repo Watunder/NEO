@@ -1,0 +1,97 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<script type="text/javascript" src="copperlicht.js"></script>
+</head>
+<body>
+	<b>Tutorial 04: 2D Overlays.</b><br/>
+	Demonstrates 2d text overlays, how to caculate the 2d position from a 3d position and how to use the OnAnimate handler.
+	<div style="width:640px; margin:auto; position:relative; font-size: 9pt; color: #777777;">
+		<canvas id="3darea" width="640" height="480" style="background-color:#000000">
+		</canvas>
+		<div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:420px; background-color:#000000; height:37px; width:300px; border-radius:5px; border:1px solid #777777; opacity:0.5;" id="helptext"> 
+			Look with the mouse, move with the cursor keys or WASD. 
+		</div> 
+		<div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:20px; background-color:#000000; height:20px; width:60px; border-radius:5px; border:1px solid #777777; opacity:0.5;" id="originlabel"> 
+			The Origin
+		</div> 
+	</div>
+	<script type="text/javascript">
+	<!--
+	main = function()
+	{
+		// create the 3d engine
+		var engine = new CL3D.CopperLicht('3darea');
+		
+		if (!engine.initRenderer())
+			return; // this browser doesn't support WebGL
+			
+		// add a new 3d scene
+		
+		var scene = new CL3D.Scene();
+		engine.addScene(scene);
+		
+		scene.setBackgroundColor(CL3D.createColor(1, 0, 0, 0));
+		scene.setRedrawMode(CL3D.Scene.REDRAW_WHEN_SCENE_CHANGED);
+		
+		// add a transparent billboard scene node with a text sign
+		for (var i=0; i<50; ++i)
+		{
+			var billboard = new CL3D.BillboardSceneNode();
+			billboard.setSize(30, 30);
+			billboard.Pos.X = Math.random() * 80 - 40;
+			billboard.Pos.Y = Math.random() * 80 - 40;
+			billboard.Pos.Z = Math.random() * 80 - 40;
+			billboard.getMaterial(0).Tex1 = engine.getTextureManager().getTexture("particle.png", true);
+			billboard.getMaterial(0).Type = CL3D.Material.EMT_TRANSPARENT_ADD_COLOR;
+			scene.getRootSceneNode().addChild(billboard);
+		}
+							
+		// add a user controlled camera with a first person shooter style camera controller
+		var cam = new CL3D.CameraSceneNode();
+		cam.Pos.X = 50;
+		cam.Pos.Y = 20;
+		
+		var animator = new CL3D.AnimatorCameraFPS(cam, engine);										
+		cam.addAnimator(animator);										
+		animator.lookAt(new CL3D.Vect3d(0,20,0));			
+		
+		scene.getRootSceneNode().addChild(cam);
+		scene.setActiveCamera(cam);				
+
+		// draw handler
+		var pos3d = new CL3D.Vect3d(0,0,0);
+		
+		engine.OnAnimate = function()
+		{
+			var element = document.getElementById('originlabel');
+			if (element)
+			{
+				// set the position of the label to the 2d position of the 3d point
+				
+				var pos2d = engine.get2DPositionFrom3DPosition(pos3d);
+				var hide = false;
+				
+				if (pos2d)
+				{
+					element.style.left = pos2d.X;
+					element.style.top = pos2d.Y;
+					
+					// hide if outside of the border
+					hide = pos2d.X < 0 || pos2d.Y < 0 || 
+						pos2d.X > engine.getRenderer().getWidth()-60 || 
+						pos2d.Y > engine.getRenderer().getHeight()-20;
+				}
+				else
+					hide = true; 
+					
+				element.style.display = hide ? 'none' : 'block';
+			}
+		}
+	}
+	
+	main();
+	-->
+	</script>
+</body>
+</html>

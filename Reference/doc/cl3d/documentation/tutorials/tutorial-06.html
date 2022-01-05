@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>CopperLicht Reference - Tutorial 6</title>
+
+		<style type="text/css">
+			body
+{
+	width: 800px;
+	border: 1px solid #ffffff;
+	
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	background-color:#FFFFFF;	
+	
+	margin: 0;
+	padding: 0;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+pre.tutcode
+{
+	display: block;
+	padding: 8px;
+	border: 1px solid #aaaaaa;
+	background-color: #eeeeee;
+	overflow:scroll; 
+}
+
+#index
+{
+	margin-top: 0px;
+	float: left;
+	width: 200px;
+	position: absolute;
+	left: 0px;
+	background-color: #F3F3F3;
+	padding: 5px;	
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+
+#content
+{
+	margin-left: 220px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	/*width: 140px;*/
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+a
+{
+	color: #0000ff;
+}
+
+a:link {
+	color: #0000CC;
+	text-decoration: none;
+}
+
+a:visited {
+    color: #0000CC;
+	text-decoration: none;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #0000CC;
+	/*font-style: italic;*/
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+
+hr
+{
+	border: 0px solid #aaaaaa;
+	background-color:#aaaaaa;
+	height:1px;
+}
+
+		</style>
+	</head>
+
+	<body>
+
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<h2>Documentation</h2>
+			<ul class="classList">
+				<li><a href="../index.html">Overview</a></li>	
+				<li><a href="http://www.ambiera.com/copperlicht/index.html" target="_blank">Website</a></li>
+				<li><a href="../index.html#tutorials">Tutorials</a></li>	
+				<li><a href="../index.html#classes">Class Index</a></li>	
+			</ul>
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+
+<!-- ============================== header ================================= -->	
+<!-- begin static/header.html -->
+<div id="header"  style="clear: both; padding: 10px; margin-left: -21px; width:100%; background-color: #eeeeee; border-bottom: 1px solid #cccccc; border-right: 1px solid #cccccc;">
+CopperLicht API Documentation 
+</div>
+<!-- end static/header.html -->
+<!-- ============================== class title ============================ -->
+
+<!-- begin static/header.html -->
+<br/>
+<a href="../index.html#tutorials">All tutorials</a>
+<div class="tutorialcontent">
+
+	<h1>CopperLicht Tutorial: Collision detection and response</h1>
+	<br/>
+	This tutorial demonstrates how to do collision detection in CopperLicht.<br/>
+	The final result of this tutorial will look about like this:
+	<br/>
+	<br/>
+	<div align="center"><img src="images/tut6_overview.jpg" alt="copperlicht tutorial 6"/><br/>
+	<small>A room where the user cannot move trough walls, and he can walk up stairs.</small>
+	</div>
+	<br/>
+	<ul>
+		<li>Show <a target="_blank" href="demos/tutorial6/index.html">live demo of this tutorial</a></li>
+		<li>Download this tutorial  <a href="demos/tutorial6.zip">as zip archive.</a></li>
+	</ul>
+		
+	<br/>
+	
+	<h2>Creating a room</h2>
+	
+	In order to collide against walls, we need a room. Start up the 3d editor <a href="http://www.ambiera.com/coppercube/index.html">CopperCube</a> and create a simple room, like in this
+	example:<br/><br/>
+	
+	<div align="center"><img src="images/tut6_img1.jpg" alt="a room"/><br/>
+	</div>
+	<br/>
+	
+	In the <a href="demos/tutorial6.zip">zip archive</a> of this tutorial, you'll find a .ccb file named room.ccb which contains exactly this example, you can also use this one.
+	<br/><br/>
+	Use CopperCube to save the scene into a directory of your choice and publish the scene as WebGL/JavaScript (Choose Tools -> Test as JavaScript/WebGL). This will create a .ccbjs or .ccbz
+	file with this scene which we can load using CopperLicht.
+	
+	
+
+	<h2>Writing CopperLicht code</h2>
+	
+	Now create a .html file in that directory and paste the following code into it. What it does will be explained in detail below.
+	
+	<pre class="tutcode" style="max-height: 600px; overflow:scroll; ">
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"&gt;
+	&lt;script type="text/javascript" src="copperlichtdata/copperlicht.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;b&gt;Tutorial 06: Collision detection.&lt;/b&gt;&lt;br/&gt;
+	Demonstrates how to do various ways of collision detection: Walking around in a room and picking the wall&lt;br/&gt;&lt;br/&gt;
+	&lt;div style="width:640px; margin:auto; position:relative; font-size: 9pt; color: #777777;"&gt;
+		&lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+		&lt;/canvas&gt;
+		&lt;div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:420px; background-color:#000000; height:37px; width:300px; border-radius:5px; border:1px solid #777777; opacity:0.5;" id="helptext"&gt; 
+			Look with the mouse, move with the cursor keys or WASD. Press space to 'shoot' a cube at the next wall.
+		&lt;/div&gt; 
+	&lt;/div&gt;
+	&lt;script type="text/javascript"&gt;
+	&lt;!--
+	var engine = startCopperLichtFromFile('3darea', 'copperlichtdata/room.ccbjs');
+	var cubeCollisionPosition = null;
+	// this is called when loading the 3d scene has finished
+	
+	engine.OnLoadingComplete = function() 
+	{		
+		var scene = engine.getScene();
+		if (!scene)
+			return;
+			
+		// in the CopperCube 3d editor, we already created a camera which collides against the wall in this scene.
+		// But to demonstrate how this would work manually, we create a new camera here which does this as well:
+		
+		// add a user controlled camera
+		
+		var cam = new CL3D.CameraSceneNode();
+		
+		// ensure to place the camera inside the room, or it will fall out, into the endless void
+		
+		cam.Pos.X = -50; 
+		cam.Pos.Y = 180;
+		cam.Pos.Z = -20;
+		
+		// add an animator which makes the camera move by keyboard and mouse input
+		
+		var animator = new CL3D.AnimatorCameraFPS(cam, engine);	
+		animator.MoveSpeed = 0.2;
+		animator.RotateSpeed = 250;
+		animator.setLookByMouseDown(false); //  look when the mouse is moved
+		cam.addAnimator(animator);	
+		
+		animator.lookAt(new CL3D.Vect3d(-200,90,200));			
+		
+		scene.getRootSceneNode().addChild(cam);
+		scene.setActiveCamera(cam);		
+		
+		// add the collision response animator to collide against walls
+		
+		var colanimator = new CL3D.AnimatorCollisionResponse(
+			new CL3D.Vect3d(20,40,20), // size of the player ellipsoid
+			new CL3D.Vect3d(0,30,0), // position of the eye in the ellipsoid
+			scene.getCollisionGeometry());
+			
+		cam.addAnimator(colanimator);	
+	}
+	
+	// every time the user presses space, we want to do a collision test with the wall
+	// and create a cube where we hit the wall
+	
+	document.onkeyup = function(event)
+	{
+		var scene = engine.getScene();
+		if (!scene)
+			return;
+			
+		if (event.keyCode == 32) // space has been pressed
+		{
+			var cam = scene.getActiveCamera();
+			
+			// calculate the start and end 3d point of the line, the beinning being
+			// the camera position and the end about 2000 units away in the direction of the
+			// camera target
+			
+			var startLine = cam.getAbsolutePosition();
+			var endLine = startLine.add(cam.getTarget().substract(startLine).multiplyWithScal(2000));
+			
+			// test our line for a collision with the world
+			
+			var collisionPoint = scene.getCollisionGeometry().getCollisionPointWithLine(startLine, endLine, true, null);
+						
+			if (collisionPoint)
+			{
+				// a collision has been found.
+				// create a cube at the point where the collision happened
+				
+				if (!cubeCollisionPosition)
+				{
+					cubeCollisionPosition = new CL3D.CubeSceneNode();
+					scene.getRootSceneNode().addChild(cubeCollisionPosition);
+					cubeCollisionPosition.getMaterial(0).Tex1 = engine.getTextureManager().getTexture('ground_stone.jpg', true);
+				}
+				
+				cubeCollisionPosition.Pos = collisionPoint;
+			}
+		}		
+		
+		// we need to call the key handler of the 3d engine as well, so that the user is
+		// able to move the camera using the keys
+		engine.handleKeyUp(event);
+	};
+	--&gt;
+	&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+	Also, put a .jpg file named 'ground_stone.jpg' into that directory, so that the cube will have a texture.
+	<br/>
+	<br/>
+	
+	<h2>What the code does</h2>
+	As always, the first few lines of the html code are creating a canvas element inside a container. Inside this container, there is a &lt;div&gt;, used for the 2d overlay. The style of these divs
+	with its absolute positioning is making it possible to move them over the canvas:
+	
+	<pre class="tutcode" >&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"&gt;
+  &lt;script type="text/javascript" src="copperlichtdata/copperlicht.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;b&gt;Tutorial 06: Collision detection.&lt;/b&gt;&lt;br/&gt;
+  Demonstrates how to do various ways of collision detection: Walking around in a room and picking the wall&lt;br/&gt;&lt;br/&gt;
+  &lt;div style="width:640px; margin:auto; position:relative; font-size: 9pt; color: #777777;"&gt;
+    &lt;canvas id="3darea" width="640" height="480" style="background-color:#000000"&gt;
+    &lt;/canvas&gt;
+    &lt;div style="display:block; color:#ffffff; padding:5px; position:absolute; left:20px; top:420px; background-color:#000000; height:37px; width:300px; border-radius:5px; border:1px solid #777777; opacity:0.5;" id="helptext"&gt; 
+      Look with the mouse, move with the cursor keys or WASD. Press space to 'shoot' a cube at the next wall.
+    &lt;/div&gt; 
+  &lt;/div&gt;</pre>
+
+	So let's start with the javascript code. First, we simply initialize the 3d engine and tell it to load the scene file we created in the editor. You might have to adjust
+	the file name of the .ccbjs file to fit the name you picked when saving the scene. We also store a variable named cubeCollisionPosition where we later save a scene node
+	used to mark the position where we hit the wall when 'shooting':
+	
+	<pre class="tutcode" >&lt;script type="text/javascript"&gt;
+  &lt;!--
+  var engine = startCopperLichtFromFile('3darea', 'copperlichtdata/room.ccbjs');
+  var cubeCollisionPosition = null;
+  </pre>
+	
+	Next, we add a camera to the scene when the .ccbjs file has finished loading. But this time, the camera should not only move
+	when the user presses the cursor keys which is achieved using a AnimatorCameraFPS, we also want the camera to collide against
+	walls. For this, we also add another animator which is named AnimatorCollisionResponse. The AnimatorCollisionResponse
+	gets several parameters like the size of the player, and also the collision geometry as a triangle selector.
+	Luckly, we don't have to create this triangle selector ourselves, we can simply use the one of the scene by calling
+	scene.getCollisionGeometry(). This is done here:
+	
+	<pre class="tutcode" >
+  engine.OnLoadingComplete = function() 
+  {    
+    var scene = engine.getScene();
+    if (!scene)
+      return;
+      
+     <font color="#008000">// in the CopperCube 3d editor, we already created a camera which collides against the wall in this scene.
+    // But to demonstrate how this would work manually, we create a new camera here which does this as well:</font>
+    
+     <font color="#008000">// add a user controlled camera</font>
+    
+    var cam = new CL3D.CameraSceneNode();
+    
+     <font color="#008000">// ensure to place the camera inside the room, or it will fall out, into the endless void</font>
+    
+    cam.Pos.X = -50; 
+    cam.Pos.Y = 180;
+    cam.Pos.Z = -20;
+    
+     <font color="#008000">// add an animator which makes the camera move by keyboard and mouse input</font>
+    
+    var animator = new CL3D.AnimatorCameraFPS(cam, engine);  
+    animator.MoveSpeed = 0.2;
+    animator.RotateSpeed = 250;
+	animator.setLookByMouseDown(false); //  look when the mouse is moved
+    cam.addAnimator(animator);                    
+    animator.lookAt(new CL3D.Vect3d(-200,90,200));      
+    
+    scene.getRootSceneNode().addChild(cam);
+    scene.setActiveCamera(cam);    
+    
+     <font color="#008000">// add the collision response animator to collide against walls</font>
+    
+    var colanimator = new CL3D.AnimatorCollisionResponse(
+      new CL3D.Vect3d(20,40,20),   <font color="#008000">// size of the player ellipsoid</font>
+      new CL3D.Vect3d(0,30,0),   <font color="#008000">// position of the eye in the ellipsoid</font>
+      scene.getCollisionGeometry());
+      
+    cam.addAnimator(colanimator);  
+  }</pre>
+  
+  Instead of scene.getCollisionGeometry(), we could have also supplied some other collision geometry represented as TriangleSelector.
+  Triangle selectors in CopperLicht simply provide a way to access geometry. If you have a Mesh for example, you can create a new
+  triangle selector using new MeshTriangleSelector(yourMesh, yourSceneNode);. If the mesh is big, you could use  
+  new OctTreeTriangleSelector(yourMesh, yourSceneNode) instead to speed up the collision queries a bit.<br/>
+  CopperLicht automaticly provides a triangle selector for all geometry where the 'Collision' attribute was checked in the editor via
+  scene.getCollisionGeometry(), so you won't have to build it yourself.<br/><br/>
+  You could try out the program already now, it should work and you can walk around in the room without being able to walk through walls.
+  But to demonstrate another collision detection feature, we'll add this final code part:
+ 
+	<pre class="tutcode" ><font color="#008000">  // every time the user presses space, we want to do a collision test with the wall
+  // and create a cube where we hit the wall</font>
+  
+  document.onkeyup = function(event)
+  {
+    var scene = engine.getScene();
+    if (!scene)
+      return;
+      
+    if (event.keyCode == 32) <font color="#008000">// space has been pressed</font>
+    {
+      var cam = scene.getActiveCamera();
+      
+      <font color="#008000">// calculate the start and end 3d point of the line, the beinning being
+      // the camera position and the end about 2000 units away in the direction of the
+      // camera target</font>
+      
+      var startLine = cam.getAbsolutePosition();
+      var endLine = startLine.add(cam.getTarget().substract(startLine).multiplyWithScal(2000));
+      
+      <font color="#008000">// test our line for a collision with the world</font>
+      
+      var collisionPoint = scene.getCollisionGeometry().getCollisionPointWithLine(startLine, endLine, true, null);
+            
+      if (collisionPoint)
+      {
+        <font color="#008000">// a collision has been found.
+        // create a cube at the point where the collision happened</font>
+        
+        if (!cubeCollisionPosition)
+        {
+          cubeCollisionPosition = new CL3D.CubeSceneNode();
+          scene.getRootSceneNode().addChild(cubeCollisionPosition);
+          cubeCollisionPosition.getMaterial(0).Tex1 = engine.getTextureManager().getTexture('ground_stone.jpg', true);
+        }
+        
+        cubeCollisionPosition.Pos = collisionPoint;
+      }
+    }    
+    
+    <font color="#008000">// we need to call the key handler of the 3d engine as well, so that the user is
+    // able to move the camera using the keys</font>
+    engine.handleKeyUp(event);
+  };
+  --&gt;
+  &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+	</pre>
+	
+	Basically, we just added a function which causes a cube to be created at the point of the wall we are looking at when pressing SPACE. 
+	To find this collision point, we used the getCollisionPointWithLine() function of the TriangleSelector class. It returns the collision point
+	as Vect3d or null if there was no collision.
+	<br/><br/>
+	
+	And that's it, now you know how to do basic collision detection in CopperLicht.<br/>
+
+	
+</div>
+<!-- end static/header.html -->
+
+<br/>
+<br/>
+<a href="../index.html#tutorials">More Tutorials</a>
+<br/>
+<br/>
+<hr/>
+
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			&copy; 2011-2018 N.Gebhardt, Ambiera<br />
+			Documentation generated by JsDoc Toolkit
+		</div>
+	</body>
+</html>

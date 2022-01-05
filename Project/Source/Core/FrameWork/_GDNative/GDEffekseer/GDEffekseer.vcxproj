@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.CommonUtils.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.IndexBufferBase.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.ModelRendererBase.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.Renderer.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.Renderer_Impl.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.RenderStateBase.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.RibbonRendererBase.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.RingRendererBase.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.SpriteRendererBase.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.TrackRendererBase.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.VertexBufferBase.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\_ModelLoader.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\TextureLoader.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.Grid.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.Layer.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.Matrix44.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.ObjectInternal.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.ReferenceObject.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.Vector3DF.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Culling\Culling3D.WorldInternal.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Client.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Color.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.CurveLoader.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.DefaultEffectLoader.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.DefaultFile.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Effect.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNode.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeModel.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeRibbon.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeRing.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeRoot.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeSprite.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.EffectNodeTrack.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.FCurves.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Instance.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.InstanceChunk.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.InstanceContainer.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.InstanceGlobal.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.InstanceGroup.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.InternalScript.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.IntrusiveList.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Manager.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Matrix43.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Matrix44.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Random.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.RectF.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Resource.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.ResourceManager.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Server.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Setting.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Socket.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Vector2D.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.Vector3D.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Effekseer.WorkerThread.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\ForceField\ForceFields.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\IO\Effekseer.EfkEfcFactory.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Material\Effekseer.CompiledMaterial.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Material\Effekseer.MaterialCompiler.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Material\Effekseer.MaterialFile.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Model\Model.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Model\ModelLoader.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Model\ProceduralModelGenerator.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Model\SplineGenerator.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Noise\CurlNoise.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Noise\PerlinNoise.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Parameter\Easing.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Parameter\Effekseer.Parameters.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\SIMD\Mat43f.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\SIMD\Mat44f.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\SIMD\Utils.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer\Effekseer\Utils\Effekseer.CustomAllocator.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\GDEffekseer.IndexBuffer.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\GDEffekseer.Utils.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\GDEffekseer.VertexBuffer.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.CurveLoader.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.MaterialLoader.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.ModelLoader.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.SoundLoader.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.TextureLoader.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.ModelRenderer.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.Renderer.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.RenderState.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Resource\GDEffekseer.RenderResources.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Resource\GDEffekseer.SoundResources.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Shader\GDEffekseer.Shader.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\Shader\GDEffekseer.ShaderGenerator.cpp" />
+    <ClCompile Include="..\..\Graphics\GDEffekseer\SoundPlayer\GDEffekseer.SoundPlayer.cpp" />
+    <ClCompile Include="Src\EffekseerEffect.cpp" />
+    <ClCompile Include="Src\EffekseerEffectImporter.cpp" />
+    <ClCompile Include="Src\EffekseerEmitter.cpp" />
+    <ClCompile Include="Src\EffekseerEmitter2D.cpp" />
+    <ClCompile Include="Src\EffekseerResource.cpp" />
+    <ClCompile Include="Src\EffekseerSystem.cpp" />
+    <ClCompile Include="Src\GDLibrary.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\EffekseerRenderer.SpriteRendererBase.h" />
+    <ClInclude Include="..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon\TextureLoader.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.Base.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.Base.Pre.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.IndexBuffer.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.RendererImplemented.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.Utils.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\GDEffekseer.VertexBuffer.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.CurveLoader.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.MaterialLoader.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.ModelLoader.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.SoundLoader.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Loader\GDEffekseer.TextureLoader.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.ModelRenderer.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.Renderer.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Render\GDEffekseer.RenderState.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Resource\GDEffekseer.RenderResources.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Resource\GDEffekseer.SoundResources.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Shader\GDEffekseer.Shader.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\Shader\GDEffekseer.ShaderGenerator.h" />
+    <ClInclude Include="..\..\Graphics\GDEffekseer\SoundPlayer\GDEffekseer.SoundPlayer.h" />
+    <ClInclude Include="Src\EffekseerEffect.h" />
+    <ClInclude Include="Src\EffekseerEffectImporter.h" />
+    <ClInclude Include="Src\EffekseerEmitter.h" />
+    <ClInclude Include="Src\EffekseerEmitter2D.h" />
+    <ClInclude Include="Src\EffekseerResource.h" />
+    <ClInclude Include="Src\EffekseerSystem.h" />
+    <ClInclude Include="Src\GDLibrary.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{845ce1e2-36aa-4c84-9242-e2f170b5c2b5}</ProjectGuid>
+    <RootNamespace>GDEffekseer</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>GDEffekseer</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>gdeffekseer.win64</TargetName>
+    <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;aria_EXPORTS;_WINDOWS;_USRDLL;</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\..\ExternalLibrary\GDNative\godot-headers;..\..\..\ExternalLibrary\GDNative\include;..\..\..\ExternalLibrary\GDNative\include\core;..\..\..\ExternalLibrary\GDNative\include\gen;..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\Effekseer;..\..\..\ExternalLibrary\Effekseer\Dev\Cpp\EffekseerRendererCommon;..\..\Graphics\GDEffekseer;..\..\Graphics\GDEffekseer\Loader;..\..\Graphics\GDEffekseer\Render;..\..\Graphics\GDEffekseer\Resource;..\..\Graphics\GDEffekseer\Shader;..\..\Graphics\GDEffekseer\SoundPlayer;.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>..\..\..\ExternalLibrary\GDNative\bin\libgodot-cpp.windows.debug.64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,11 @@
+Project/Editor/
+Project/Package/
+Project/Resource/
+Project/Source/Core/ExternalLibrary/
+Project/Source/Core/Godot/
+Project/Toolkit/
+
+.vs/
+out/
+bin/
+x64/
