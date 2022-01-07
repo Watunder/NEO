@@ -13,7 +13,7 @@
   - [KRKR](https://github.com/krkrz/krkrz)
   - [Onigurma](https://github.com/kkos/oniguruma)
   - [PhysicsFS](https://github.com/icculus/physfs)
-  - [RmlUi](https://github.com/icculus/physfs)
+  - [RmlUi](https://github.com/mikke89/RmlUi)
   - [SoLoud](https://github.com/jarikomppa/soloud)
   - [Squirrel](https://github.com/albertodemichelis/squirrel)
 
