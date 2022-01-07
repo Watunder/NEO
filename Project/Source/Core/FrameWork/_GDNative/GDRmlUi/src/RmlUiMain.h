@@ -1,13 +1,13 @@
 #pragma once
 
 #include <Godot.hpp>
-#include <Node2D.hpp>
+#include <Viewport.hpp>
 
 namespace godot
 {
-	class RmlUiMain : public Node2D
+	class RmlUiMain : public Viewport
 	{
-		GODOT_CLASS(RmlUiMain, Node2D);
+		GODOT_CLASS(RmlUiMain, Viewport);
 
 	public:
 		RmlUiMain();
