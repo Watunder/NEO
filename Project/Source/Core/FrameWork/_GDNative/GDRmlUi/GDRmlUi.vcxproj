@@ -142,13 +142,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\..\ExternalLibrary\GDNative\godot-headers;..\..\..\ExternalLibrary\GDNative\include;..\..\..\ExternalLibrary\GDNative\include\core;..\..\..\ExternalLibrary\GDNative\include\gen;..\..\..\ExternalLibrary\RmlUi\Include;..\..\..\ExternalLibrary\RmlUi\Samples\shell\include;..\_Binder\Loader;..\_Binder\Render;..\_Binder\Resource;..\_Binder\Shader;..\_Binder\Utils;..\..\Graphics\GDRmlUi\File;..\..\Graphics\GDRmlUi\Font;..\..\Graphics\GDRmlUi\Render;..\..\Graphics\GDRmlUi\System;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\ExternalLibrary\GDNative\godot-headers;..\..\..\ExternalLibrary\GDNative\include;..\..\..\ExternalLibrary\GDNative\include\core;..\..\..\ExternalLibrary\GDNative\include\gen;..\..\..\ExternalLibrary\RmlUi\Include;..\..\..\ExternalLibrary\RmlUi\Samples\shell\include;..\_Binder\Loader;..\_Binder\Render;..\_Binder\Resource;..\_Binder\Shader;..\_Binder\Utils;..\..\Graphics\GDRmlUi\File;..\..\Graphics\GDRmlUi\Font;..\..\Graphics\GDRmlUi\Render;..\..\Graphics\GDRmlUi\System;.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>..\..\..\ExternalLibrary\GDNative\bin\libgodot-cpp.windows.debug.64.lib;shlwapi.lib;..\..\..\ExternalLibrary\RmlUi\Build\Debug\shell.lib;..\..\..\ExternalLibrary\RmlUi\Build\Test_DX9\lib\d3d9.lib;..\..\..\ExternalLibrary\RmlUi\Build\Test_DX9\lib\d3dx9.lib;..\..\..\ExternalLibrary\RmlUi\Build\Debug\RmlDebugger.lib;..\..\..\ExternalLibrary\RmlUi\Build\Debug\RmlCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\..\..\ExternalLibrary\GDNative\bin\libgodot-cpp.windows.debug.64.lib;shlwapi.lib;..\..\..\ExternalLibrary\RmlUi\Build\Debug\shell.lib;..\..\..\ExternalLibrary\RmlUi\Build\Debug\RmlDebugger.lib;..\..\..\ExternalLibrary\RmlUi\Build\Debug\RmlCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

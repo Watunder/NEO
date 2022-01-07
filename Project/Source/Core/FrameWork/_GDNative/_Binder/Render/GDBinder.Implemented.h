@@ -18,7 +18,8 @@ namespace GDBinder
 
 		DynamicTexture m_customData1Texture;
 		DynamicTexture m_customData2Texture;
-		DynamicTexture m_uvTangentTexture;
+		DynamicTexture m_customData3Texture;
+		DynamicTexture m_customData4Texture;
 		int32_t m_vertexTextureOffset = 0;
 	};
 }

@@ -7,12 +7,13 @@
 #include <Input.h>
 #include <Shell.h>
 
-#include "GDRmlUi.RenderInterface.h"
-
 #include "FontEngineInterfaceBitmap.h"
+
+#include "GDRmlUi.RenderInterface.h"
 
 namespace godot
 {
+
 	RmlUiMain::RmlUiMain()
 	{
 		
@@ -31,6 +32,6 @@ namespace godot
 
 	void RmlUiMain::_register_methods()
 	{
-		
+
 	}
 }

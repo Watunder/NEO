@@ -20,9 +20,9 @@ namespace GDRmlUi
 		Rml::CompiledGeometryHandle CompileGeometry(Rml::Vertex* vertices, int num_vertices, int* indices, int num_indices, Rml::TextureHandle texture) override;
 
 		/// Called by RmlUi when it wants to render application-compiled geometry.
-		void RenderCompiledGeometry(Rml::CompiledGeometryHandle geometry, const Rml::Vector2f& translation) override;
+		//void RenderCompiledGeometry(Rml::CompiledGeometryHandle geometry, const Rml::Vector2f& translation) override;
 		/// Called by RmlUi when it wants to release application-compiled geometry.
-		void ReleaseCompiledGeometry(Rml::CompiledGeometryHandle geometry) override;
+		//void ReleaseCompiledGeometry(Rml::CompiledGeometryHandle geometry) override;
 
 		/// Called by RmlUi when it wants to enable or disable scissoring to clip content.
 		void EnableScissorRegion(bool enable) override;
