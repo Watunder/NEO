@@ -1,0 +1,3 @@
+[submodule "KRKR"]
+	path = Project/Source/Core/ExternalLibrary/KRKR
+	url = https://github.com/Watunder/KRKR
