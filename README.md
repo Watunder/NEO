@@ -10,7 +10,7 @@
   - [EntityX](https://github.com/alecthomas/entityx)
   - [GDNative](https://github.com/godotengine/godot-cpp/tree/3.3)
   - [GGPO](https://github.com/pond3r/ggpo)
-  - [KRKR](https://github.com/krkrz/krkrz)
+  - [KRKR]()
   - [Onigurma](https://github.com/kkos/oniguruma)
   - [PhysicsFS](https://github.com/icculus/physfs)
   - [Plog](https://github.com/SergiusTheBest/plog)
