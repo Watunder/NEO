@@ -1,8 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-<<<<<<< HEAD
 Reference/doc/ linguist-documentation
-=======
-Reference/* linguist-documentation
->>>>>>> af832d0b137258a70d596cfa3407f5003fd59739
