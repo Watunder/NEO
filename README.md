@@ -14,6 +14,7 @@
   - [Onigurma](https://github.com/kkos/oniguruma)
   - [PhysicsFS](https://github.com/icculus/physfs)
   - [Plog](https://github.com/SergiusTheBest/plog)
+  - [Rime](https://github.com/rime/librime)
   - [RmlUi](https://github.com/mikke89/RmlUi)
   - [SoLoud](https://github.com/jarikomppa/soloud)
   - [Squirrel](https://github.com/albertodemichelis/squirrel)
