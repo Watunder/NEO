@@ -19,6 +19,7 @@
   - [SoLoud](https://github.com/jarikomppa/soloud)
   - [Squirrel](https://github.com/albertodemichelis/squirrel)
   - [SteamAudio](https://github.com/ValveSoftware/steam-audio)
+  - [SwiftShader](https://github.com/google/swiftshader/tree/legacy-d3d9)
 
 ## License
 ...
