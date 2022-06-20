@@ -8,6 +8,7 @@
   - [Box2D](https://github.com/erincatto/box2d)
   - [Effekseer](https://github.com/effekseer/EffekseerForGodot3)
   - [EntityX](https://github.com/alecthomas/entityx)
+  - [FastMemcpy](https://github.com/skywind3000/FastMemcpy)
   - [GDNative](https://github.com/godotengine/godot-cpp/tree/3.3)
   - [GGPO](https://github.com/pond3r/ggpo)
   - [KRKR]()
