@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{84103f6b-4008-47eb-8b8e-0a9b73fa0443}</ProjectGuid>
+    <RootNamespace>GDKRKR</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>GDKRKR</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\</OutDir>
+    <TargetName>gdkrkr.win64</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;__WIN32__;NOUSESQRAT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\..\ExternalLibrary\GDNative\godot-headers;..\..\..\ExternalLibrary\GDNative\include;..\..\..\ExternalLibrary\GDNative\include\core;..\..\..\ExternalLibrary\GDNative\include\gen;..\..\..\ExternalLibrary\Oniguruma;..\..\..\ExternalLibrary\Oniguruma\src;..\..\..\ExternalLibrary\Oniguruma\src\unicode-7.0;..\..\..\ExternalLibrary\Squirrel\include;..\..\..\ExternalLibrary\Squirrel\sqobject;..\..\..\ExternalLibrary\KRKR\base;..\..\..\ExternalLibrary\KRKR\msg;..\..\..\ExternalLibrary\KRKR\script;..\..\..\ExternalLibrary\KRKR\sq;..\..\..\ExternalLibrary\KRKR\tjs;..\..\..\ExternalLibrary\KRKR\utils;..\..\..\ExternalLibrary\KRKR;..\..\Engine\Scripts\GDKRKR;.\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>..\..\..\ExternalLibrary\GDNative\bin\libgodot-cpp.windows.debug.64.lib;..\..\..\ExternalLibrary\Oniguruma\lib\x64\onig_s_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\base\CharacterSet.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\base\UtilStreams.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\msg\MsgImpl.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\msg\MsgIntf.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\msg\MsgLoad.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjs.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjs.tab.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsArray.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsBinarySerializer.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsByteCodeLoader.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsCompileControl.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsConfig.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsConstArrayData.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsDate.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsdate.tab.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsDateParser.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsDebug.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsDictionary.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsDisassemble.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsError.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsException.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsGlobalStringMap.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsInterCodeExec.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsInterCodeGen.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsInterface.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsLex.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsMath.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsMessage.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsMT19937ar-cok.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsNamespace.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsNative.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsObject.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsObjectExtendable.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsOctPack.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjspp.tab.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsRandomGenerator.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsRegExp.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsScriptBlock.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsScriptCache.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsScriptEngine.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsSnprintf.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsString.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsUtils.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsVariant.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsVariantString.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\utils\cp932_uni.cpp" />
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\utils\uni_cp932.cpp" />
+    <ClCompile Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Archive.cpp" />
+    <ClCompile Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Utils.cpp" />
+    <ClCompile Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Wrapper.cpp" />
+    <ClCompile Include="src\GDLibrary.cpp" />
+    <ClCompile Include="src\KRScript.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Archive.h" />
+    <ClInclude Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Utils.h" />
+    <ClInclude Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Wrapper.h" />
+    <ClInclude Include="src\GDLibrary.h" />
+    <ClInclude Include="src\KRScript.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

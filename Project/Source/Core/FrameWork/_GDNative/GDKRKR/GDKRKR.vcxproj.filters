@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GDLibrary">
+      <UniqueIdentifier>{b91e0be6-3634-4c46-be09-19fb3708cdee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KRLibrary">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GDKRKR">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="KRKR">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="KRKR\sq">
+      <UniqueIdentifier>{dc8ab25f-abc6-4d04-a9c6-8d39087433e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GDLibrary.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KRScript.cpp">
+      <Filter>GDLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsOctPack.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\base\UtilStreams.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\base\CharacterSet.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\utils\uni_cp932.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\utils\cp932_uni.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsVariantString.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsVariant.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsUtils.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsString.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsSnprintf.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsScriptEngine.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsScriptCache.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsScriptBlock.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsRegExp.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsRandomGenerator.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjspp.tab.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsObjectExtendable.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsObject.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsNative.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsNamespace.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsMT19937ar-cok.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsMessage.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsMath.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsLex.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsInterface.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsInterCodeGen.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsInterCodeExec.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsGlobalStringMap.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsException.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsError.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsDisassemble.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsDictionary.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsDebug.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsDateParser.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsdate.tab.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsDate.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsConstArrayData.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsConfig.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsCompileControl.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsByteCodeLoader.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsBinarySerializer.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjsArray.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjs.tab.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\tjs\tjs.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\msg\MsgLoad.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\msg\MsgIntf.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ExternalLibrary\KRKR\msg\MsgImpl.cpp">
+      <Filter>KRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Archive.cpp">
+      <Filter>GDKRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Utils.cpp">
+      <Filter>GDKRKR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Wrapper.cpp">
+      <Filter>GDKRKR</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\GDLibrary.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KRScript.h">
+      <Filter>GDLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Archive.h">
+      <Filter>GDKRKR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Utils.h">
+      <Filter>GDKRKR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Engine\Scripts\GDKRKR\GDKRKR.Wrapper.h">
+      <Filter>GDKRKR</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
