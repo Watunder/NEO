@@ -24,8 +24,6 @@
     <ClInclude Include="..\..\Graphics\GDRmlUi\Font\FontEngineInterfaceBitmap.h" />
     <ClInclude Include="..\..\Graphics\GDRmlUi\Render\GDRmlUi.RenderInterface.h" />
     <ClInclude Include="..\..\Graphics\GDRmlUi\System\GDRmlUi.SystemInterface.h" />
-    <ClInclude Include="..\_Binder\Render\GDBinder.Implemented.h" />
-    <ClInclude Include="..\_Binder\Render\GDBinder.Render.h" />
     <ClInclude Include="src\GDLibrary.h" />
     <ClInclude Include="src\RmlUiContext.h" />
     <ClInclude Include="src\RmlUiMain.h" />
@@ -36,8 +34,6 @@
     <ClCompile Include="..\..\Graphics\GDRmlUi\Font\FontEngineInterfaceBitmap.cpp" />
     <ClCompile Include="..\..\Graphics\GDRmlUi\Render\GDRmlUi.RenderInterface.cpp" />
     <ClCompile Include="..\..\Graphics\GDRmlUi\System\GDRmlUi.SystemInterface.cpp" />
-    <ClCompile Include="..\_Binder\Render\GDBinder.Implemented.cpp" />
-    <ClCompile Include="..\_Binder\Render\GDBinder.Render.cpp" />
     <ClCompile Include="src\GDLibrary.cpp" />
     <ClCompile Include="src\RmlUiContext.cpp" />
     <ClCompile Include="src\RmlUiMain.cpp" />

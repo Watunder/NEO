@@ -3,6 +3,10 @@
 //----------------------------------------------------------------------------------
 // Include
 //----------------------------------------------------------------------------------
+
+#include <ArrayMesh.hpp>
+#include <ImmediateMesh.hpp>
+#include <Material.hpp>
 #include "EffekseerRenderer.RenderStateBase.h"
 #include "EffekseerRenderer.StandardRenderer.h"
 #include "GDEffekseer.Base.h"
@@ -33,12 +37,15 @@ public:
 	void DrawSprites(godot::World* world, int32_t priority);
 	void DrawModel(godot::World* world, godot::RID mesh, int32_t priority);
 
-	godot::RID GetImmediate() { return m_immediate; }
+	//godot::RID GetImmediate() { return m_immediate; }
+	godot::ImmediateMesh *GetMesh() { return m_mesh;  }
 	godot::RID GetInstance() { return m_instance; }
 	godot::RID GetMaterial() { return m_material; }
 
 private:
-	godot::RID m_immediate;
+	//godot::RID m_immediate;
+	///godot::RID m_mesh;
+	godot::ImmediateMesh *m_mesh;
 	godot::RID m_instance;
 	godot::RID m_material;
 };
@@ -124,6 +131,8 @@ private:
 	size_t m_renderCount = 0;
 	std::vector<RenderCommand2D> m_renderCommand2Ds;
 	size_t m_renderCount2D = 0;
+
+	size_t Count = 0;
 
 	struct ModelRenderState {
 		Effekseer::ModelRef model = nullptr;
@@ -274,7 +283,7 @@ public:
 	virtual int Release() override { return Effekseer::ReferenceObject::Release(); }
 
 private:
-	void TransferVertexToImmediate3D(godot::RID immediate, 
+	void TransferVertexToImmediate3D(godot::ImmediateMesh* mesh,
 		const void* vertexData, int32_t spriteCount);
 
 	void TransferVertexToCanvasItem2D(godot::RID canvas_item, 

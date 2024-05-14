@@ -1,13 +1,15 @@
 #pragma once
 
+#include <File.hpp>
+
 #include <RmlUi/Core/FileInterface.h>
 
 namespace GDRmlUi
 {
+	/*
 	class FileInterface : public Rml::FileInterface
 	{
 	public:
-		/*
 		// Opens a file.
 		Rml::FileHandle Open(const Rml::String& path) override;
 
@@ -22,6 +24,6 @@ namespace GDRmlUi
 
 		// Returns the current position of the file pointer.
 		size_t Tell(Rml::FileHandle file) override;
-		*/
 	};
+	*/
 }

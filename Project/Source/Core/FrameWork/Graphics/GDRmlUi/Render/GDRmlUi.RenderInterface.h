@@ -2,11 +2,10 @@
 
 #include <RmlUi/Core/RenderInterface.h>
 
-#include "GDBinder.Implemented.h"
+#include <Godot.hpp>
 
 namespace GDRmlUi
 {
-
 	class RenderInterface : public Rml::RenderInterface
 	{
 	public:
@@ -14,10 +13,10 @@ namespace GDRmlUi
 		~RenderInterface();
 
 		/// Called by RmlUi when it wants to render geometry that it does not wish to optimise.
-		void RenderGeometry(Rml::Vertex* vertices, int num_vertices, int* indices, int num_indices, Rml::TextureHandle texture, const Rml::Vector2f& translation) override;
+		virtual void RenderGeometry(Rml::Vertex* vertices, int num_vertices, int* indices, int num_indices, Rml::TextureHandle texture, const Rml::Vector2f& translation);
 
 		// Called by RmlUi when it wants to compile geometry it believes will be static for the forseeable future.
-		Rml::CompiledGeometryHandle CompileGeometry(Rml::Vertex* vertices, int num_vertices, int* indices, int num_indices, Rml::TextureHandle texture) override;
+		//Rml::CompiledGeometryHandle CompileGeometry(Rml::Vertex* vertices, int num_vertices, int* indices, int num_indices, Rml::TextureHandle texture) override;
 
 		/// Called by RmlUi when it wants to render application-compiled geometry.
 		//void RenderCompiledGeometry(Rml::CompiledGeometryHandle geometry, const Rml::Vector2f& translation) override;
@@ -25,20 +24,22 @@ namespace GDRmlUi
 		//void ReleaseCompiledGeometry(Rml::CompiledGeometryHandle geometry) override;
 
 		/// Called by RmlUi when it wants to enable or disable scissoring to clip content.
-		void EnableScissorRegion(bool enable) override;
+		virtual void EnableScissorRegion(bool enable);
 		/// Called by RmlUi when it wants to change the scissor region.
-		void SetScissorRegion(int x, int y, int width, int height) override;
+		virtual void SetScissorRegion(int x, int y, int width, int height);
 
 		/// Called by RmlUi when a texture is required by the library.
-		bool LoadTexture(Rml::TextureHandle& texture_handle, Rml::Vector2i& texture_dimensions, const Rml::String& source) override;
+		virtual bool LoadTexture(Rml::TextureHandle& texture_handle, Rml::Vector2i& texture_dimensions, const Rml::String& source);
 		/// Called by RmlUi when a texture is required to be built from an internally-generated sequence of pixels.
-		bool GenerateTexture(Rml::TextureHandle& texture_handle, const Rml::byte* source, const Rml::Vector2i& source_dimensions) override;
+		virtual bool GenerateTexture(Rml::TextureHandle& texture_handle, const Rml::byte* source, const Rml::Vector2i& source_dimensions);
 		/// Called by RmlUi when a loaded texture is no longer required.
-		void ReleaseTexture(Rml::TextureHandle texture_handle) override;
+		virtual void ReleaseTexture(Rml::TextureHandle texture_handle);
 
 		/// Called by RmlUi when it wants to set the current transform matrix to a new matrix.
-		void SetTransform(const Rml::Matrix4f* transform) override;
+		//virtual void SetTransform(const Rml::Matrix4f* transform);
 	private:
-		GDBinder::RendererImplemented* m_render;
+		godot::RID m_canvas_item;
+		godot::RID m_mesh;
+		godot::RID m_material;
 	};
 }

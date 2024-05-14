@@ -8,7 +8,7 @@ namespace GDRmlUi
 	{
 		auto os = godot::OS::get_singleton();
 
-		return double(os->get_unix_time());
+		return double(os->get_ticks_msec()/1000.0);
 	}
 
 	bool SystemInterface::LogMessage(Rml::Log::Type type, const Rml::String& message)

@@ -1,20 +1,27 @@
 #include <RmlUi/Core.h>
 
-#include "GDRmlUi.FileInterface.h"
+#include <ArrayMesh.hpp>
+#include <Transform2D.hpp>
+#include <Image.hpp>
+#include <Texture.hpp>
+#include <ImageTexture.hpp>
+#include <VisualServer.hpp>
+#include <ResourceLoader.hpp>
+
 #include "GDRmlUi.RenderInterface.h"
 
 namespace GDRmlUi
 {
-	struct Geometry
+	struct Triangle2D
 	{
 		godot::PoolIntArray indices;
 		godot::PoolVector2Array position;
 		godot::PoolColorArray color;
 		godot::PoolVector2Array uv;
 
-		Geometry(int num_vertices)
+		Triangle2D(int num_vertices, int num_indices)
 		{
-			indices.resize(num_vertices * 6);
+			indices.resize(num_indices);
 			position.resize(num_vertices);
 			color.resize(num_vertices);
 			uv.resize(num_vertices);
@@ -23,41 +30,38 @@ namespace GDRmlUi
 
 	RenderInterface::RenderInterface()
 	{
-		m_render = new GDBinder::RendererImplemented();
+		auto vs = godot::VisualServer::get_singleton();
+
+		m_canvas_item = vs->canvas_item_create();
+		m_mesh = vs->mesh_create();
+		m_material = vs->material_create();
 	}
 
 	RenderInterface::~RenderInterface()
 	{
+		auto vs = godot::VisualServer::get_singleton();
 
+		vs->free_rid(m_canvas_item);
+		vs->free_rid(m_mesh);
+		vs->free_rid(m_material);
 	}
 
 	void RenderInterface::RenderGeometry(Rml::Vertex* vertices, int num_vertices, int* indices, int num_indices, Rml::TextureHandle texture, const Rml::Vector2f& translation)
 	{
 		auto vs = godot::VisualServer::get_singleton();
 
-		auto m_canvasItem = vs->canvas_create();
-		auto m_transform = godot::Transform2D(0, godot::Vector2(translation.x, translation.y));
-		auto m_material = vs->material_create();
+		auto triangle = new Triangle2D(num_vertices, num_indices);
 
-		godot::PoolIntArray indexArray;
-		godot::PoolVector2Array pointArray;
-		godot::PoolColorArray colorArray;
-		godot::PoolVector2Array uvArray;
+		int* _indices = triangle->indices.write().ptr();
+		memcpy(_indices, indices, num_indices);
 
-		indexArray.resize(num_indices);
-		pointArray.resize(num_vertices);
-		colorArray.resize(num_vertices);
-		uvArray.resize(num_vertices);
-
-		int* _indices = indexArray.write().ptr();
-		_indices = indices;
-		godot::Vector2* _point = pointArray.write().ptr();
-		godot::Color* _color = colorArray.write().ptr();
-		godot::Vector2* _uv = uvArray.write().ptr();
+		godot::Vector2* _position = triangle->position.write().ptr();
+		godot::Color* _color = triangle->color.write().ptr();
+		godot::Vector2* _uv = triangle->uv.write().ptr();
 		for (int v = 0; v < num_vertices; v++)
 		{
-			_point[v].x = vertices[v].position.x;
-			_point[v].y = vertices[v].position.y;
+			_position[v].x = vertices[v].position.x;
+			_position[v].y = vertices[v].position.y;
 
 			_color[v].r = vertices[v].colour.red;
 			_color[v].g = vertices[v].colour.green;
@@ -68,50 +72,84 @@ namespace GDRmlUi
 			_uv[v].y = vertices[v].tex_coord.y;
 		}
 
-		vs->canvas_item_add_triangle_array(m_canvasItem, indexArray, pointArray, colorArray, uvArray);
-		vs->canvas_item_set_parent(m_canvasItem, NULL);
-		vs->canvas_item_set_transform(m_canvasItem, m_transform);
-		vs->canvas_item_set_material(m_canvasItem, m_material);
-	}
+		godot::Array mesh_array;
+		mesh_array.resize(godot::ArrayMesh::ARRAY_MAX);
+		mesh_array[godot::ArrayMesh::ARRAY_INDEX] = triangle->indices;
+		mesh_array[godot::ArrayMesh::ARRAY_VERTEX] = triangle->position;
+		mesh_array[godot::ArrayMesh::ARRAY_COLOR] = triangle->color;
+		mesh_array[godot::ArrayMesh::ARRAY_TEX_UV] = triangle->uv;
 
-	Rml::CompiledGeometryHandle RenderInterface::CompileGeometry(Rml::Vertex* vertices, int num_vertices, int* indices, int num_indices, Rml::TextureHandle texture)
-	{
+		auto transform = godot::Transform2D(0, godot::Vector2(translation.x, translation.y));
 
+		vs->canvas_item_clear(m_canvas_item);
+		vs->canvas_item_set_parent(m_canvas_item, godot::RID());
 
-		return (Rml::CompiledGeometryHandle) nullptr;
+		vs->mesh_add_surface_from_arrays(m_mesh, godot::Mesh::PRIMITIVE_TRIANGLES, mesh_array, godot::Array(), godot::Mesh::ARRAY_FLAG_USE_2D_VERTICES);
+		vs->canvas_item_add_mesh(m_canvas_item, m_mesh, transform, godot::Color(1, 1, 1, 1), (godot::RID&)texture);
+
+		vs->canvas_item_set_parent(m_canvas_item, godot::RID());
+		vs->canvas_item_set_material(m_canvas_item, m_material);
 	}
 
 	void RenderInterface::EnableScissorRegion(bool enable)
 	{
-		// the scissor is not contrlled here
+		auto vs = godot::VisualServer::get_singleton();
+
+		vs->canvas_item_set_clip(m_canvas_item, enable);
 	}
 
 	void RenderInterface::SetScissorRegion(int x, int y, int width, int height)
 	{
-		// the scissor is not contrlled here
+		auto vs = godot::VisualServer::get_singleton();
+
+		vs->canvas_item_set_custom_rect(m_canvas_item, true, godot::Rect2(x, y, width, height));
 	}
 
 	bool RenderInterface::LoadTexture(Rml::TextureHandle& texture_handle, Rml::Vector2i& texture_dimensions, const Rml::String& source)
 	{
+		auto vs = godot::VisualServer::get_singleton();
 
+		auto loader = godot::ResourceLoader::get_singleton();
+		auto resource = loader->load(source.c_str());
+		if (!resource.is_valid())
+		{
+			return false;
+		}
+		auto _image = (godot::Image*)resource.ptr();
+		
+		godot::RID m_texture = vs->texture_create_from_image(_image);
+
+		texture_handle = (Rml::TextureHandle&)m_texture;
 
 		return true;
 	}
 
 	bool RenderInterface::GenerateTexture(Rml::TextureHandle& texture_handle, const Rml::byte* source, const Rml::Vector2i& source_dimensions)
 	{
+		auto vs = godot::VisualServer::get_singleton();
 
+		godot::Ref<godot::Image> _image;
+		_image.instance();
+		godot::PoolByteArray _image_data;
+		_image_data.resize(source_dimensions.x * source_dimensions.y * 4);
+
+		uint8_t* dptr = _image_data.write().ptr();
+		uint8_t* sptr = (uint8_t*)source;
+		std::memcpy(dptr, sptr, (size_t)source_dimensions.x * source_dimensions.y * 4);
+
+		_image->create_from_data(source_dimensions.x, source_dimensions.y, false, godot::Image::FORMAT_RGBA8, _image_data);
+
+		godot::RID m_texture = vs->texture_create_from_image(_image);
+
+		texture_handle = (Rml::TextureHandle&)m_texture;
 
 		return true;
 	}
 
 	void RenderInterface::ReleaseTexture(Rml::TextureHandle texture_handle)
 	{
+		auto vs = godot::VisualServer::get_singleton();
 
-	}
-
-	void RenderInterface::SetTransform(const Rml::Matrix4f* transform)
-	{
-
+		vs->free_rid((godot::RID&)texture_handle);
 	}
 }

@@ -9,8 +9,8 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="EmotoDX9">
-      <UniqueIdentifier>{5efa103d-44a3-4929-a3df-e23b828bb067}</UniqueIdentifier>
+    <Filter Include="EmoteDX11">
+      <UniqueIdentifier>{297483e7-f67c-4579-85fa-13dd6c6f731e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -20,8 +20,14 @@
     <ClCompile Include="src\GDLibrary.cpp">
       <Filter>GDLibrary</Filter>
     </ClCompile>
-    <ClCompile Include="src\EmotoDX9.cpp">
-      <Filter>EmotoDX9</Filter>
+    <ClCompile Include="src\EmoteDX11\d3drendertexture.cpp">
+      <Filter>EmoteDX11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EmoteDX11\d3dview.cpp">
+      <Filter>EmoteDX11</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EmoteDX11\EmoteTest.cpp">
+      <Filter>EmoteDX11</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -31,11 +37,14 @@
     <ClInclude Include="src\GDLibrary.h">
       <Filter>GDLibrary</Filter>
     </ClInclude>
-    <ClInclude Include="src\iemote.h">
-      <Filter>EmotoDX9</Filter>
+    <ClInclude Include="src\EmoteDX11\d3drendertexture.h">
+      <Filter>EmoteDX11</Filter>
     </ClInclude>
-    <ClInclude Include="src\EmoteDX9.h">
-      <Filter>EmotoDX9</Filter>
+    <ClInclude Include="src\EmoteDX11\d3dview.h">
+      <Filter>EmoteDX11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EmoteDX11\EmoteTest.h">
+      <Filter>EmoteDX11</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

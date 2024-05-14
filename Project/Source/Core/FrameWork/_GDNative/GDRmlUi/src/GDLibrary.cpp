@@ -1,6 +1,7 @@
 #include "GDLibrary.h"
 
 #include "RmlUiMain.h"
+#include "RmlUiContext.h"
 // -----------------------------------------------------------------
 
 using namespace godot;
@@ -25,6 +26,7 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void* handle)
 	Godot::nativescript_init(handle);
 
 	register_class<RmlUiMain>();
+	register_class<RmlUiContext>();
 }
 
 // -----------------------------------------------------------------

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Loader">
+      <UniqueIdentifier>{6bb11910-33e7-452e-a1a4-705d3546cf4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{c8342776-7a6a-4b17-bc75-b4095d2bc685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{6dfb5b67-b5b8-46f2-9727-cac4db78ff42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{5af926c9-bd27-4fea-89c3-f04dd45507e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{1af636a3-0fac-437e-b082-4ef184791862}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Utils\GDBinder.Utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Loader\GDBinder.TextureLoader.cpp">
+      <Filter>Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Resource\GDBinder.RenderResources.cpp">
+      <Filter>Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\GDBinder.Implemented.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Render\GDBinder.Render.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Utils\GDBinder.Utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Loader\GDBinder.TextureLoader.h">
+      <Filter>Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource\GDBinder.RenderResources.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\GDBinder.Implemented.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Render\GDBinder.Render.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

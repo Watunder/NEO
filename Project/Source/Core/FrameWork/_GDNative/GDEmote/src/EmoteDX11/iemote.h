@@ -7,12 +7,16 @@
 #ifndef __EMOTE_DRIVER_H
 #define __EMOTE_DRIVER_H
 
+#include <stdint.h>
 #include <cstddef>
-#include <d3d9.h>
+#include <D3D11.h>
+#include <DirectXMath.h>
+#include <mtx.h>
 
-typedef BYTE emote_uint8_t;
-typedef ULONG emote_uint32_t;
-typedef LONG emote_int32_t;
+typedef uint8_t   emote_uint8_t;
+typedef uint32_t  emote_uint32_t;
+typedef int32_t  emote_int32_t;
+typedef uint64_t  emote_uint64_t;
 
 #ifdef EMOTE_STATIC_LIBRARY
 #define _EXPORT
@@ -52,20 +56,37 @@ public:
   };
 
 
-  enum shader_model_t {
-    SHADER_MODEL_NO_SHADER,
-    SHADER_MODEL_2,
-    SHADER_MODEL_3
+  enum vp_mode_t {
+    VP_MODE_GL = 0,
+    VP_MODE_DX,
   };
 
-  enum alpha_op_t {
-    ALPHA_OP_DESTALPHA_MULTIPLY_INVSRCALPHA_PLUS_SRCALPHA,
-    ALPHA_OP_DESTALPHA_PLUS_SRCALPHA
+  enum mem_usage_t {
+    MEM_USAGE_SURFACE = 0,
+    MEM_USAGE_TEXTURE,
+    MEM_USAGE_VERTEX,
+    MEM_USAGE_SHADER_BINARY,
+    MEM_USAGE_SHADER_HEADER,
+  };
+
+  typedef void *(*MemAlloc)(void *arg, mem_usage_t usage, emote_uint32_t size,
+                            emote_uint32_t align, emote_uint64_t *hint);
+  typedef void (*MemFree)(void *arg, void *mem, mem_usage_t usage,
+                          emote_uint64_t hint);
+  struct MemAllocator {
+    void     *arg;
+    MemAlloc alloc;
+    MemFree  free;
   };
 
   struct InitParam {
-    LPDIRECT3DDEVICE9 d3dDevice;
-    ObjMemAllocator objAllocator;
+    ID3D11Device* device;
+    ID3D11DeviceContext* context;
+    IDXGISwapChain* swapChain;
+    size_t chainId;
+    ID3D11RenderTargetView* renderTargetView;
+    ID3D11DepthStencilView* depthStencilView;
+    ObjMemAllocator     objAllocator;
   };
 
   virtual const IEmoteDevice::InitParam &GetInitParam(void) const = 0;
@@ -83,27 +104,29 @@ public:
   virtual void SetProtectTranslucentTextureColor(bool state) = 0;
   virtual bool GetProtectTranslucentTextureColor(void) const = 0;
 
-  virtual shader_model_t GetAvailableShaderModel(void) const = 0;
-  virtual void SetShaderModel(shader_model_t model) = 0;
-  virtual shader_model_t GetShaderModel(void) const = 0;
+  virtual void SetRenderTargetInfo(ID3D11RenderTargetView* rendertarget, ID3D11DepthStencilView* depthstencil) = 0;
+  virtual void SetViewportInfo(const D3D11_VIEWPORT* viewport) = 0;
+  virtual void SetViewportInfo(float scale[3], float offset[3]) = 0;
+  virtual void SetViewportInfo(emote_uint32_t x, emote_uint32_t y,
+                               emote_uint32_t width, emote_uint32_t height,
+                               vp_mode_t mode) = 0;
 
-  virtual void SetMipMapEnabled(bool state) = 0;
-  virtual bool GetMipMapEnabled(void) const = 0;
+  virtual void SetSelf2DMatrixMode(bool flag) = 0;
+  virtual bool GetSelf2DMatrixMode(void) const = 0;
 
-  virtual void SetAlphaOp(alpha_op_t alphaOp) = 0;
-  virtual alpha_op_t GetAlphaOp(void) const = 0;
+  virtual void SetModelMatrix(const DirectX::XMFLOAT4X4* mtx) = 0;
+  virtual void SetViewMatrix(const DirectX::XMFLOAT4X4* mtx) = 0;
+  virtual void SetProjMatrix(const DirectX::XMFLOAT4X4* mtx) = 0;
 
-  virtual void SetPixelateDivision(int division) = 0;
-  virtual int GetPixelateDivision(void) const = 0;
+  virtual void SetNextVertexBuffer(void) = 0;
+  virtual emote_uint32_t GetVertexBufferCount(void) const = 0;
+  virtual emote_uint32_t GetVertexBufferSize(void) const = 0;
+  virtual emote_uint32_t GetVertexBufferUsage(void) const = 0;
 
-  virtual void SetMaxTextureSize(emote_uint32_t width, emote_uint32_t height) = 0;
-
-  virtual void OnDeviceLost(void) = 0;
-  virtual void OnRenderTarget(LPDIRECT3DTEXTURE9 renderTargetTexture) = 0;
+  virtual void OnPause(void) = 0;
+  virtual void OnResume(void) = 0;
 
 
-  virtual void SetUseD3D9Ex(bool state) = 0;
-  virtual bool GetUseD3D9Ex(void) const = 0;
 };
 
 

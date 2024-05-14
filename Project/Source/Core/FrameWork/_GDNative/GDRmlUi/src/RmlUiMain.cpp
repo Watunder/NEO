@@ -1,7 +1,5 @@
 #include "RmlUiMain.h"
 
-
-
 #include <RmlUi/Core.h>
 #include <RmlUi/Debugger.h>
 #include <Input.h>
@@ -13,10 +11,12 @@
 
 namespace godot
 {
+	RmlUiMain* RmlUiMain::s_instance = nullptr;
 
 	RmlUiMain::RmlUiMain()
 	{
-		
+		s_instance = this;
+
 	}
 
 	RmlUiMain::~RmlUiMain()

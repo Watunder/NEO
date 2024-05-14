@@ -4,6 +4,7 @@
 //----------------------------------------------------------------------------------
 #include <Godot.hpp>
 #include <VisualServer.hpp>
+#include <ImmediateMesh.hpp>
 #include <World.hpp>
 #include <Viewport.hpp>
 #include <Mesh.hpp>
@@ -241,7 +242,9 @@ inline void CopyCustomData(float*& dst, const uint8_t*& src, int32_t count)
 RenderCommand::RenderCommand()
 {
 	auto vs = godot::VisualServer::get_singleton();
-	m_immediate = vs->immediate_create();
+	//m_immediate = vs->immediate_create();
+	///m_mesh = vs->mesh_create();
+	m_mesh = godot::ImmediateMesh::_new();
 	m_instance = vs->instance_create();
 	m_material = vs->material_create();
 	vs->instance_geometry_set_material_override(m_instance, m_material);
@@ -251,14 +254,15 @@ RenderCommand::~RenderCommand()
 {
 	auto vs = godot::VisualServer::get_singleton();
 	vs->free_rid(m_instance);
-	vs->free_rid(m_immediate);
+	//vs->free_rid(m_immediate);
+	vs->free_rid(m_mesh->get_rid());
 	vs->free_rid(m_material);
 }
 
 void RenderCommand::Reset()
 {
 	auto vs = godot::VisualServer::get_singleton();
-	vs->immediate_clear(m_immediate);
+	//vs->immediate_clear(m_immediate);
 	vs->instance_set_base(m_instance, godot::RID());
 }
 
@@ -266,7 +270,8 @@ void RenderCommand::DrawSprites(godot::World* world, int32_t priority)
 {
 	auto vs = godot::VisualServer::get_singleton();
 
-	vs->instance_set_base(m_instance, m_immediate);
+	//vs->instance_set_base(m_instance, m_immediate);
+	vs->instance_set_base(m_instance, m_mesh->get_rid());
 	vs->instance_set_scenario(m_instance, world->get_scenario());
 	vs->material_set_render_priority(m_material, priority);
 }
@@ -587,7 +592,7 @@ void RendererImplemented::DrawSprites(int32_t spriteCount, int32_t vertexOffset)
 		auto& command = m_renderCommands[m_renderCount];
 
 		// Transfer vertex data
-		TransferVertexToImmediate3D(command.GetImmediate(), 
+		TransferVertexToImmediate3D(command.GetMesh(), 
 			GetVertexBuffer()->Refer() + vertexOffset * m_vertexStride, spriteCount);
 
 		// Setup material
@@ -792,14 +797,30 @@ void RendererImplemented::DeleteProxyTexture(Effekseer::Backend::TextureRef& tex
 	texture = nullptr;
 }
 
-void RendererImplemented::TransferVertexToImmediate3D(godot::RID immediate, 
+void RendererImplemented::TransferVertexToImmediate3D(godot::ImmediateMesh *mesh,
 	const void* vertexData, int32_t spriteCount)
 {
 	using namespace EffekseerRenderer;
 
 	auto vs = godot::VisualServer::get_singleton();
 
-	vs->immediate_begin(immediate, godot::Mesh::PRIMITIVE_TRIANGLE_STRIP);
+	//vs->immediate_begin(immediate, godot::Mesh::PRIMITIVE_TRIANGLE_STRIP);
+	if (Count > 0)
+	{
+		mesh->clear_surfaces();
+	}
+	Count++;
+	mesh->surface_begin(godot::Mesh::PRIMITIVE_TRIANGLE_STRIP);
+
+	godot::Array mesh_array;
+	mesh_array.resize(godot::ArrayMesh::ARRAY_MAX);
+
+	godot::PoolColorArray colorArray;
+	godot::PoolVector2Array uvArray;
+	godot::PoolVector2Array uv2Array;
+	godot::PoolVector3Array normalArray;
+	godot::PoolRealArray tangentArray;
+	godot::PoolVector3Array pointArray;
 
 	RendererShaderType shaderType = m_currentShader->GetShaderType();
 
@@ -809,22 +830,39 @@ void RendererImplemented::TransferVertexToImmediate3D(godot::RID immediate,
 		for (int32_t i = 0; i < spriteCount; i++)
 		{
 			// Generate degenerate triangles
-			vs->immediate_color(immediate, godot::Color());
-			vs->immediate_uv(immediate, godot::Vector2());
-			vs->immediate_vertex(immediate, ConvertVector3(vertices[i * 4 + 0].Pos));
+			//vs->immediate_color(immediate, godot::Color());
+			//vs->immediate_uv(immediate, godot::Vector2());
+			//vs->immediate_vertex(immediate, ConvertVector3(vertices[i * 4 + 0].Pos));
+			///colorArray.push_back(godot::Color());
+			///uvArray.push_back(godot::Vector2());
+			///pointArray.push_back(ConvertVector3(vertices[i * 4 + 0].Pos));
 
 			for (int32_t j = 0; j < 4; j++)
 			{
 				auto& v = vertices[i * 4 + j];
-				vs->immediate_color(immediate, ConvertColor(v.Col));
-				vs->immediate_uv(immediate, ConvertUV(v.UV));
-				vs->immediate_vertex(immediate, ConvertVector3(v.Pos));
+				//vs->immediate_color(immediate, ConvertColor(v.Col));
+				//vs->immediate_uv(immediate, ConvertUV(v.UV));
+				//vs->immediate_vertex(immediate, ConvertVector3(v.Pos));
+				///colorArray.push_back(ConvertColor(v.Col));
+				///uvArray.push_back(ConvertUV(v.UV));
+				///pointArray.push_back(ConvertVector3(v.Pos));
+				mesh->surface_add_vertex(ConvertVector3(v.Pos));
 			}
-
-			vs->immediate_color(immediate, godot::Color());
-			vs->immediate_uv(immediate, godot::Vector2());
-			vs->immediate_vertex(immediate, ConvertVector3(vertices[i * 4 + 3].Pos));
+			
+			//vs->immediate_color(immediate, godot::Color());
+			//vs->immediate_uv(immediate, godot::Vector2());
+			//vs->immediate_vertex(immediate, ConvertVector3(vertices[i * 4 + 3].Pos));
+			///colorArray.push_back(godot::Color());
+			///uvArray.push_back(godot::Vector2());
+			///pointArray.push_back(ConvertVector3(vertices[i * 4 + 3].Pos));
 		}
+
+		///mesh_array[godot::ArrayMesh::ARRAY_COLOR] = colorArray;
+		///mesh_array[godot::ArrayMesh::ARRAY_TEX_UV] = uvArray;
+		///mesh_array[godot::ArrayMesh::ARRAY_VERTEX] = pointArray;
+
+		///vs->mesh_clear(mesh);
+		///vs->mesh_add_surface_from_arrays(mesh, godot::VisualServer::PRIMITIVE_TRIANGLE_STRIP, mesh_array);
 	}
 	else if (shaderType == RendererShaderType::BackDistortion || shaderType == RendererShaderType::Lit)
 	{
@@ -832,28 +870,62 @@ void RendererImplemented::TransferVertexToImmediate3D(godot::RID immediate,
 		for (int32_t i = 0; i < spriteCount; i++)
 		{
 			// Generate degenerate triangles
-			vs->immediate_color(immediate, godot::Color());
-			vs->immediate_uv(immediate, godot::Vector2());
-			vs->immediate_normal(immediate, godot::Vector3());
-			vs->immediate_tangent(immediate, godot::Plane());
-			vs->immediate_vertex(immediate, ConvertVector3(vertices[i * 4 + 0].Pos));
+			//vs->immediate_color(immediate, godot::Color());
+			//vs->immediate_uv(immediate, godot::Vector2());
+			//vs->immediate_normal(immediate, godot::Vector3());
+			//vs->immediate_tangent(immediate, godot::Plane());
+			//vs->immediate_vertex(immediate, ConvertVector3(vertices[i * 4 + 0].Pos));
+			///colorArray.push_back(godot::Color());
+			///uvArray.push_back(godot::Vector2());
+			///normalArray.push_back(godot::Vector3());
+			///tangentArray.push_back(0.0f);
+			///tangentArray.push_back(0.0f);
+			///tangentArray.push_back(0.0f);
+			///tangentArray.push_back(1.0f);
+			///pointArray.push_back(ConvertVector3(vertices[i * 4 + 0].Pos));
 
 			for (int32_t j = 0; j < 4; j++)
 			{
 				auto& v = vertices[i * 4 + j];
-				vs->immediate_color(immediate, ConvertColor(v.Col));
-				vs->immediate_uv(immediate, ConvertUV(v.UV));
-				vs->immediate_normal(immediate, ConvertVector3(Normalize(UnpackVector3DF(v.Normal))));
-				vs->immediate_tangent(immediate, ConvertTangent(Normalize(UnpackVector3DF(v.Tangent))));
-				vs->immediate_vertex(immediate, ConvertVector3(v.Pos));
+				//vs->immediate_color(immediate, ConvertColor(v.Col));
+				//vs->immediate_uv(immediate, ConvertUV(v.UV));
+				//vs->immediate_normal(immediate, ConvertVector3(Normalize(UnpackVector3DF(v.Normal))));
+				//vs->immediate_tangent(immediate, ConvertTangent(Normalize(UnpackVector3DF(v.Tangent))));
+				//vs->immediate_vertex(immediate, ConvertVector3(v.Pos));
+				///colorArray.push_back(ConvertColor(v.Col));
+				///uvArray.push_back(ConvertUV(v.UV));
+				///normalArray.push_back(ConvertVector3(Normalize(UnpackVector3DF(v.Normal))));
+				///tangentArray.push_back(Normalize(UnpackVector3DF(v.Tangent)).X);
+				///tangentArray.push_back(Normalize(UnpackVector3DF(v.Tangent)).Y);
+				///tangentArray.push_back(Normalize(UnpackVector3DF(v.Tangent)).Z);
+				///tangentArray.push_back(1.0f);
+				///pointArray.push_back(ConvertVector3(v.Pos));
+				mesh->surface_add_vertex(ConvertVector3(v.Pos));
 			}
 
-			vs->immediate_color(immediate, godot::Color());
-			vs->immediate_uv(immediate, godot::Vector2());
-			vs->immediate_normal(immediate, godot::Vector3());
-			vs->immediate_tangent(immediate, godot::Plane());
-			vs->immediate_vertex(immediate, ConvertVector3(vertices[i * 4 + 3].Pos));
+			//vs->immediate_color(immediate, godot::Color());
+			//vs->immediate_uv(immediate, godot::Vector2());
+			//vs->immediate_normal(immediate, godot::Vector3());
+			//vs->immediate_tangent(immediate, godot::Plane());
+			//vs->immediate_vertex(immediate, ConvertVector3(vertices[i * 4 + 3].Pos));
+			///colorArray.push_back(godot::Color());
+			///uvArray.push_back(godot::Vector2());
+			///normalArray.push_back(godot::Vector3());
+			///tangentArray.push_back(0.0f);
+			///tangentArray.push_back(0.0f);
+			///tangentArray.push_back(0.0f);
+			///tangentArray.push_back(1.0f);
+			///pointArray.push_back(ConvertVector3(vertices[i * 4 + 3].Pos));
 		}
+
+		///mesh_array[godot::ArrayMesh::ARRAY_COLOR] = colorArray;
+		///mesh_array[godot::ArrayMesh::ARRAY_TEX_UV] = uvArray;
+		///mesh_array[godot::ArrayMesh::ARRAY_TANGENT] = tangentArray;
+		///mesh_array[godot::ArrayMesh::ARRAY_NORMAL] = normalArray;
+		///mesh_array[godot::ArrayMesh::ARRAY_VERTEX] = pointArray;
+
+		///vs->mesh_clear(mesh);
+		///vs->mesh_add_surface_from_arrays(mesh, godot::VisualServer::PRIMITIVE_TRIANGLE_STRIP, mesh_array);
 	}
 	else if (shaderType == RendererShaderType::Material)
 	{
@@ -872,35 +944,73 @@ void RendererImplemented::TransferVertexToImmediate3D(godot::RID immediate,
 			for (int32_t i = 0; i < spriteCount; i++)
 			{
 				// Generate degenerate triangles
-				vs->immediate_color(immediate, godot::Color());
-				vs->immediate_uv(immediate, godot::Vector2());
-				vs->immediate_uv2(immediate, godot::Vector2());
-				vs->immediate_normal(immediate, godot::Vector3());
-				vs->immediate_tangent(immediate, godot::Plane());
-				vs->immediate_vertex(immediate, ConvertVector3((*(const DynamicVertex*)(vertexPtr)).Pos));
+				//vs->immediate_color(immediate, godot::Color());
+				//vs->immediate_uv(immediate, godot::Vector2());
+				//vs->immediate_uv2(immediate, godot::Vector2());
+				//vs->immediate_normal(immediate, godot::Vector3());
+				//vs->immediate_tangent(immediate, godot::Plane());
+				//vs->immediate_vertex(immediate, ConvertVector3((*(const DynamicVertex*)(vertexPtr)).Pos));
+				///colorArray.push_back(godot::Color());
+				///uvArray.push_back(godot::Vector2());
+				///uv2Array.push_back(godot::Vector2());
+				///normalArray.push_back(godot::Vector3());
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(1.0f);
+				///pointArray.push_back(ConvertVector3((*(const DynamicVertex*)(vertexPtr)).Pos));
 
 				for (int32_t j = 0; j < 4; j++)
 				{
 					auto& v = *(const DynamicVertex*)vertexPtr;
-					vs->immediate_color(immediate, ConvertColor(v.Col));
-					vs->immediate_uv(immediate, ConvertUV(v.UV));
-					vs->immediate_uv2(immediate, ConvertVertexTextureUV(m_vertexTextureOffset++, width));
-					vs->immediate_normal(immediate, ConvertVector3(Normalize(UnpackVector3DF(v.Normal))));
-					vs->immediate_tangent(immediate, ConvertTangent(Normalize(UnpackVector3DF(v.Tangent))));
-					vs->immediate_vertex(immediate, ConvertVector3(v.Pos));
-					vertexPtr += sizeof(DynamicVertex);
+					//vs->immediate_color(immediate, ConvertColor(v.Col));
+					//vs->immediate_uv(immediate, ConvertUV(v.UV));
+					//vs->immediate_uv2(immediate, ConvertVertexTextureUV(m_vertexTextureOffset++, width));
+					//vs->immediate_normal(immediate, ConvertVector3(Normalize(UnpackVector3DF(v.Normal))));
+					//vs->immediate_tangent(immediate, ConvertTangent(Normalize(UnpackVector3DF(v.Tangent))));
+					//vs->immediate_vertex(immediate, ConvertVector3(v.Pos));
+					///colorArray.push_back(ConvertColor(v.Col));
+					///uvArray.push_back(ConvertUV(v.UV));
+					///uv2Array.push_back(ConvertVertexTextureUV(m_vertexTextureOffset++, width));
+					///normalArray.push_back(ConvertVector3(Normalize(UnpackVector3DF(v.Normal))));
+					///tangentArray.push_back(Normalize(UnpackVector3DF(v.Tangent)).X);
+					///tangentArray.push_back(Normalize(UnpackVector3DF(v.Tangent)).Y);
+					///tangentArray.push_back(Normalize(UnpackVector3DF(v.Tangent)).Z);
+					///tangentArray.push_back(1.0f);
+					///pointArray.push_back(ConvertVector3(v.Pos));
+					///vertexPtr += sizeof(DynamicVertex);
+					mesh->surface_add_vertex(ConvertVector3(v.Pos));
 
 					if (customData1TexPtr) CopyCustomData(customData1TexPtr, vertexPtr, customData1Count);
 					if (customData2TexPtr) CopyCustomData(customData2TexPtr, vertexPtr, customData2Count);
 				}
 
-				vs->immediate_color(immediate, godot::Color());
-				vs->immediate_uv(immediate, godot::Vector2());
-				vs->immediate_uv2(immediate, godot::Vector2());
-				vs->immediate_normal(immediate, godot::Vector3());
-				vs->immediate_tangent(immediate, godot::Plane());
-				vs->immediate_vertex(immediate, ConvertVector3((*(const DynamicVertex*)(vertexPtr - stride)).Pos));
+				//vs->immediate_color(immediate, godot::Color());
+				//vs->immediate_uv(immediate, godot::Vector2());
+				//vs->immediate_uv2(immediate, godot::Vector2());
+				//vs->immediate_normal(immediate, godot::Vector3());
+				//vs->immediate_tangent(immediate, godot::Plane());
+				//vs->immediate_vertex(immediate, ConvertVector3((*(const DynamicVertex*)(vertexPtr - stride)).Pos));
+				///colorArray.push_back(godot::Color());
+				///uvArray.push_back(godot::Vector2());
+				///uv2Array.push_back(godot::Vector2());
+				///normalArray.push_back(godot::Vector3());
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(1.0f);
+				///pointArray.push_back(ConvertVector3((*(const DynamicVertex*)(vertexPtr - stride)).Pos));
 			}
+
+			///mesh_array[godot::ArrayMesh::ARRAY_COLOR] = colorArray;
+			///mesh_array[godot::ArrayMesh::ARRAY_TEX_UV] = uvArray;
+			///mesh_array[godot::ArrayMesh::ARRAY_TEX_UV2] = uv2Array;
+			///mesh_array[godot::ArrayMesh::ARRAY_TANGENT] = tangentArray;
+			///mesh_array[godot::ArrayMesh::ARRAY_NORMAL] = normalArray;
+			///mesh_array[godot::ArrayMesh::ARRAY_VERTEX] = pointArray;
+
+			///vs->mesh_clear(mesh);
+			///vs->mesh_add_surface_from_arrays(mesh, godot::VisualServer::PRIMITIVE_TRIANGLE_STRIP, mesh_array);
 
 			if (customData1TexPtr) m_customData1Texture.Unlock();
 			if (customData2TexPtr) m_customData2Texture.Unlock();
@@ -912,33 +1022,68 @@ void RendererImplemented::TransferVertexToImmediate3D(godot::RID immediate,
 			for (int32_t i = 0; i < spriteCount; i++)
 			{
 				// Generate degenerate triangles
-				vs->immediate_color(immediate, godot::Color());
-				vs->immediate_uv(immediate, godot::Vector2());
-				vs->immediate_normal(immediate, godot::Vector3());
-				vs->immediate_tangent(immediate, godot::Plane());
-				vs->immediate_vertex(immediate, ConvertVector3((*(const DynamicVertex*)(vertexPtr)).Pos));
+				//vs->immediate_color(immediate, godot::Color());
+				//vs->immediate_uv(immediate, godot::Vector2());
+				//vs->immediate_normal(immediate, godot::Vector3());
+				//vs->immediate_tangent(immediate, godot::Plane());
+				//vs->immediate_vertex(immediate, ConvertVector3((*(const DynamicVertex*)(vertexPtr)).Pos));
+				///colorArray.push_back(godot::Color());
+				///uvArray.push_back(godot::Vector2());
+				///normalArray.push_back(godot::Vector3());
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(1.0f);
+				///pointArray.push_back(ConvertVector3((*(const DynamicVertex*)(vertexPtr)).Pos));
 
 				for (int32_t j = 0; j < 4; j++)
 				{
 					auto& v = *(const DynamicVertex*)vertexPtr;
-					vs->immediate_color(immediate, ConvertColor(v.Col));
-					vs->immediate_uv(immediate, ConvertUV(v.UV));
-					vs->immediate_normal(immediate, ConvertVector3(Normalize(UnpackVector3DF(v.Normal))));
-					vs->immediate_tangent(immediate, ConvertTangent(Normalize(UnpackVector3DF(v.Tangent))));
-					vs->immediate_vertex(immediate, ConvertVector3(v.Pos));
+					//vs->immediate_color(immediate, ConvertColor(v.Col));
+					//vs->immediate_uv(immediate, ConvertUV(v.UV));
+					//vs->immediate_normal(immediate, ConvertVector3(Normalize(UnpackVector3DF(v.Normal))));
+					//vs->immediate_tangent(immediate, ConvertTangent(Normalize(UnpackVector3DF(v.Tangent))));
+					//vs->immediate_vertex(immediate, ConvertVector3(v.Pos));
+					///colorArray.push_back(ConvertColor(v.Col));
+					///uvArray.push_back(ConvertUV(v.UV));
+					///normalArray.push_back(ConvertVector3(Normalize(UnpackVector3DF(v.Normal))));
+					///tangentArray.push_back(Normalize(UnpackVector3DF(v.Tangent)).X);
+					///tangentArray.push_back(Normalize(UnpackVector3DF(v.Tangent)).Y);
+					///tangentArray.push_back(Normalize(UnpackVector3DF(v.Tangent)).Z);
+					///tangentArray.push_back(1.0f);
+					///pointArray.push_back(ConvertVector3(v.Pos));
+					mesh->surface_add_vertex(ConvertVector3(v.Pos));
 					vertexPtr += sizeof(DynamicVertex);
 				}
 
-				vs->immediate_color(immediate, godot::Color());
-				vs->immediate_uv(immediate, godot::Vector2());
-				vs->immediate_normal(immediate, godot::Vector3());
-				vs->immediate_tangent(immediate, godot::Plane());
-				vs->immediate_vertex(immediate, ConvertVector3((*(const DynamicVertex*)(vertexPtr - stride)).Pos));
+				//vs->immediate_color(immediate, godot::Color());
+				//vs->immediate_uv(immediate, godot::Vector2());
+				//vs->immediate_normal(immediate, godot::Vector3());
+				//vs->immediate_tangent(immediate, godot::Plane());
+				//vs->immediate_vertex(immediate, ConvertVector3((*(const DynamicVertex*)(vertexPtr - stride)).Pos));
+				///colorArray.push_back(godot::Color());
+				///uvArray.push_back(godot::Vector2());
+				///normalArray.push_back(godot::Vector3());
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(0.0f);
+				///tangentArray.push_back(1.0f);
+				///pointArray.push_back(ConvertVector3((*(const DynamicVertex*)(vertexPtr - stride)).Pos));
 			}
+
+			///mesh_array[godot::ArrayMesh::ARRAY_COLOR] = colorArray;
+			///mesh_array[godot::ArrayMesh::ARRAY_TEX_UV] = uvArray;
+			///mesh_array[godot::ArrayMesh::ARRAY_TANGENT] = tangentArray;
+			///mesh_array[godot::ArrayMesh::ARRAY_NORMAL] = normalArray;
+			///mesh_array[godot::ArrayMesh::ARRAY_VERTEX] = pointArray;
+
+			///vs->mesh_clear(mesh);
+			///vs->mesh_add_surface_from_arrays(mesh, godot::VisualServer::PRIMITIVE_TRIANGLE_STRIP, mesh_array);
 		}
 	}
 
-	vs->immediate_end(immediate);
+	//vs->immediate_end(immediate);
+	mesh->surface_end();
 }
 
 void RendererImplemented::TransferVertexToCanvasItem2D(godot::RID canvas_item, 
